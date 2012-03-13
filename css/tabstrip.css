@@ -1,0 +1,13 @@
+ul.tabstrip {padding: 0;	margin: 0 !important;	clear: left;	float: left;	width: 100%;	position: relative;}
+ul.tabstrip {padding: 0;	margin: 0 !important;	clear: left;	float: left;	width: 100%;	position: relative;}
+ul.tabstrip li {float:left;	background:#ddd; cursor:pointer;	position:relative;	top:0;	border:1px solid #ddd;	border-bottom:none; margin:0 5px 0 0;  border-radius: 3px 3px 0 0;}
+ul.tabstrip li a {display: block;	float:left;	padding:5px 13px 5px;	text-decoration:none; font-weight:bold;	outline:none; color:#333;}
+ul.tabstrip li a:hover {text-decoration: none;}
+
+ul.tabstrip li.current, ul.tabstrip li.ui-tabs-selected, ul.tabstrip li.sel {background:#fff;	top:0;}
+ul.tabstrip li:hover{background-color:#eee;}
+ul.tabstrip li.current:hover{background-color:#fff;}
+				
+ul.tabstrip li.current a,	ul.tabstrip li.ui-tabs-selected a, ul.tabstrip li.sel a {color:#333;}
+
+.tab {clear:left; overflow:auto; border:1px solid #ddd;	border-top: none;	margin:0; padding:10px 15px; background-color:#fff;}

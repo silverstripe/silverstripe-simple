@@ -1,0 +1,23 @@
+#Form_EditForm, #Form_EditForm a{color:#333;}
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid {border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow:0px 0px 5px red; box-shadow:0px 0px 5px red; }
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid {background-color: #f0dddd;}
+
+form ul{margin-left:0;}
+form .item {margin-bottom:5px;}
+form label{width:120px; float:left;}
+form input.text {width:250px;}
+
+.controls{text-align:left !important; padding-bottom:10px;}
+.controls label{width:auto;}
+.login-form .controls li, li.checkbox{padding-left:120px; clear:both;}
+li.checkbox{padding-bottom:20px;}
+li.checkbox input{float:left;}
+li.checkbox label{margin-left:5px; width:auto; float:left;}
+
+form .message {padding:6px 15px; border:1px solid;}
+form .good {background-color:#ecf9d0;	border-color:#8fbe00;}
+form .bad {background-color:#f9d0d0;	border-color:#be0000;}
+#MemberLoginForm_LoginForm_action_dologin, #ExternalLoginForm_LoginForm_action_dologin{padding:6px 20px;}
+#ForgotPassword a{margin-top:15px;}
+#ForgotPassword {margin-top:6px;}
