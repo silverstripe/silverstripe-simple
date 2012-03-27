@@ -1,23 +1,36 @@
-#Form_EditForm, #Form_EditForm a{color:#333;}
-input:valid, textarea:valid {  }
+.ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {font-family:Arial, Helvetica, sans-serif !important;}
 input:invalid, textarea:invalid {border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow:0px 0px 5px red; box-shadow:0px 0px 5px red; }
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid {background-color: #f0dddd;}
 
-form ul{margin-left:0;}
-form .item {margin-bottom:5px;}
-form label{width:120px; float:left;}
-form input.text {width:250px;}
-
-.controls{text-align:left !important; padding-bottom:10px;}
-.controls label{width:auto;}
-.login-form .controls li, li.checkbox{padding-left:120px; clear:both;}
-li.checkbox{padding-bottom:20px;}
-li.checkbox input{float:left;}
-li.checkbox label{margin-left:5px; width:auto; float:left;}
-
 form .message {padding:6px 15px; border:1px solid;}
-form .good {background-color:#ecf9d0;	border-color:#8fbe00;}
-form .bad {background-color:#f9d0d0;	border-color:#be0000;}
-#MemberLoginForm_LoginForm_action_dologin, #ExternalLoginForm_LoginForm_action_dologin{padding:6px 20px;}
+form .good {background-color:#ecf9d0; border-color:#8fbe00;}
+form .bad {background-color:#f9d0d0; border-color:#be0000;}
+
+.checkbox, .radio{margin-top:1px;}
+
+#MemberLoginForm_LoginForm_action_dologin, #ExternalLoginForm_LoginForm_action_dologin, .Actions .action{padding:6px 20px;}
+#MemberLoginForm_LoginForm{max-width:500px;}
 #ForgotPassword a{margin-top:15px;}
 #ForgotPassword {margin-top:6px;}
+
+div.field{width:100%; float:left; margin-bottom:20px;}
+.ui-widget{font-family:Arial, Helvetica, sans-serif;}
+form label.left {float:left; width:25%; padding-right:5%; margin-top:4px; display:block; font-size:13px;}
+form .middleColumn {float:right; width:70% !important;}
+form .middleColumn .middleColumn{width:100% !important;}
+.listbox option{padding:3px 0;}
+form input.text, form textarea, form .textajaxuniquetext, form select{width:98%; padding:6px 1%; font-size:15px;}
+form input.sitetreeurlsegment{width:200px;}
+form span.readonly {font-size:16px;}
+
+form input[disabled]{background-color:#f7f7f7; border:1px solid #dad9d9;}
+
+form .creditCardField input, form input.currency {padding:5px 1%; width:50px;}
+form input.numeric{padding:5px 1%; width:50px;}
+form #DMYDate-month, form #DMYDate-day{width:25px;}
+form .checkboxset li, form .optionset li{margin-bottom:5px;}
+
+@media only screen and (max-width: 700px) {
+form .middleColumn {float:right; width:100% !important;;}
+form label.left, #MemberLoginForm_LoginForm label{margin-bottom:8px;}
+}

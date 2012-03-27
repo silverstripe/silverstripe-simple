@@ -11,7 +11,7 @@ time, mark, audio, video{margin:0; padding:0; border:0; font-size:100%; font:inh
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}
 
 html{overflow-y:scroll;}
-body{-webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; font-smoothing: antialiased;}
+body{-webkit-text-size-adjust:none;}
 
 .clear:before, .clear:after {content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clear:after {clear:both;}
@@ -30,6 +30,7 @@ input[type="checkbox"], input.checkbox, .checkboxes input {vertical-align:bottom
 .ie6 input {vertical-align: text-bottom;}
 label, input[type="button"], input[type="submit"], input[type="image"], button, .btn {cursor:pointer;}
 button, input, select, textarea {margin:0;}
+.checkbox, .radio {float:left; width:13px; height:13px; margin-right:6px; padding:0;}
 
 button {width:auto; overflow:visible;}
 .ie7 img {-ms-interpolation-mode: bicubic;}

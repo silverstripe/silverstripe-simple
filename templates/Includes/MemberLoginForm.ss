@@ -8,22 +8,23 @@
 	<% end_if %>
 	
 	<fieldset>
-		<% if Legend %><legend>$Legend</legend><% end_if %>
-		<ul>		 
-		<% control Fields %>
-			<li class="item $type">
+		<% if Legend %><legend>$Legend</legend><% end_if %>		 
+		<% loop Fields %>
+			<div class="field $type">
 				<% if type != checkbox %><% if IsHidden != true %><label for="$id">$Title</label><% end_if %><% end_if %>
-				$Field
+				<div class="middleColumn">$Field</div>	
 				<% if type == checkbox %><label for="$id">$Title</label><% end_if %>
 				<% if Message %><span class="message $MessageType">$Message</span><% end_if %>
-			</li>
-		<% end_control %>
-		</ul>
+			</div>
+		<% end_loop %>
+
 		<% if Actions %>
-		<ul class="controls">
-			<% control Actions %>
-				<li>$Field</li>
-			<% end_control %>
+		<div class="Actions">
+			<div class="middleColumn">
+			<% loop Actions %>
+				$Field
+			<% end_loop %>
+			</div>
 		</ul>
 		<% end_if %>
 	</fieldset>
