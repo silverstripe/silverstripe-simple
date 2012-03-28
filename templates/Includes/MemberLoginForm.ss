@@ -9,21 +9,21 @@
 	
 	<fieldset>
 		<% if Legend %><legend>$Legend</legend><% end_if %>		 
-		<% loop Fields %>
+		<% control Fields %>
 			<div class="field $type">
 				<% if type != checkbox %><% if IsHidden != true %><label for="$id">$Title</label><% end_if %><% end_if %>
 				<div class="middleColumn">$Field</div>	
 				<% if type == checkbox %><label for="$id">$Title</label><% end_if %>
 				<% if Message %><span class="message $MessageType">$Message</span><% end_if %>
 			</div>
-		<% end_loop %>
+		<% end_control %>
 
 		<% if Actions %>
 		<div class="Actions">
 			<div class="middleColumn">
-			<% loop Actions %>
+			<% control Actions %>
 				$Field
-			<% end_loop %>
+			<% end_control %>
 			</div>
 		</ul>
 		<% end_if %>
