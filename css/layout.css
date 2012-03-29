@@ -1,6 +1,7 @@
 header:after, .main:after, #Root:after {height:0;content:".";display:block;clear:both;visibility:hidden;}
 
 body{background:#ededed; min-width:240px;-webkit-text-size-adjust:none; font-family:Arial, Helvetica, sans-serif;}
+.ie7 body, .ie8 body{min-width:860px;}
 
 ::-moz-selection{background:#b80000; color:#fff; text-shadow:none;}
 ::selection {background:#b80000; color:#fff; text-shadow:none;}
@@ -20,10 +21,10 @@ a.btn:hover{background:#d80000; color:#fff;}
 .content a{border-bottom:1px dashed #b80000;}
 
 .brand{float:left;}
-.brand h1{font-size:50px; font-family:"Helvetica Neue LT Pro", "Helvetica LT Std", Helvetica, Arial, sans-serif;color:#fff; font-weight:bold;}
+.brand h1{font-size:50px; font-family: "HelveticaNeueLTPro-Bd", "Helvetica Neue LT Pro Bold", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue LT Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; color:#fff; font-weight:600; font-stretch:normal; line-height:1em;} 
 .brand, .brand:hover{color:#fff;}
 
-.header .primary ul{float:right; margin:27px -15px 0 0; white-space:nowrap;}
+.header .primary ul{float:right; margin:24px -15px 0 0; white-space:nowrap;}
 .header .primary li{float:left; padding-bottom:20px; margin:0 5px;}
 .header .primary li a{color:#888; font-size:15px; font-family:Helvetica, Arial, sans-serif; padding:6px 8px; border-radius:4px; font-weight:bold; display:block; -moz-transition:color 0.2s; -webkit-transition:color 0.2s; transition:color 0.2s;}
 .header .primary li a:hover{color:#fff;} 
@@ -32,7 +33,7 @@ a.btn:hover{background:#d80000; color:#fff;}
 
 .inner{max-width:1100px; margin:0 auto; padding:0 30px; overflow-x:hidden;}
 .ie6 .inner {width:960px;}
-.ie7 .inner, .ie7 .inner{min-width:800px;}
+
 .main{background:#fff; padding:50px 0 60px;}
 aside{float:left; width:20%; margin-top:17px;}
 
@@ -49,7 +50,7 @@ aside{float:left; width:20%; margin-top:17px;}
 .content-container{float:right; width:75%; padding-bottom:20px;}
 .no-sidebar .content-container{float:left;}
 .header{background:#161616;}
-.header .inner{padding-top:50px;}
+.header .inner{padding-top:55px;}
 
 .footer{color:#999; background:#ededed; padding:20px 0; font-size:11px; line-height:22px;}
 .footer a{color:#999;}

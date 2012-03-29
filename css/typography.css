@@ -10,8 +10,8 @@
     font-style: normal;
 }
 
-body {font-size:13px; font-family:Arial, Helvetica, sans-serif;}  
-h1,h2,h3,h4,h5,h6 {font-family:"CamboRegular", Georgia, "Times New Roman", Times, serif; font-weight:normal; color:#b80000;}
+body {font-size:13px; font-family:Arial, Helvetica, sans-serif;}
+h1, h2,h3,h4,h5,h6 {font-family:"CamboRegular", Georgia, "Times New Roman", Times, serif; font-weight:normal; color:#b80000;}
 p {margin:0 0 17px; font-size:13px; line-height:21px;}
 em {font-style:normal;}
 a {color:#b80000; text-decoration:none;}
