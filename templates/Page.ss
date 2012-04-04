@@ -23,6 +23,7 @@ Change it, enhance it and most importantly enjoy it!
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
 </head>
 <body class="$ClassName<% if Menu(2) %><% else %> no-sidebar<% end_if %>">
 <% include Header %>
@@ -32,5 +33,7 @@ Change it, enhance it and most importantly enjoy it!
 	</div>
 </div>
 <% include Footer %>
+	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+	<script src="$ThemeDir/javascript/script.js"></script>
 </body>
 </html>
