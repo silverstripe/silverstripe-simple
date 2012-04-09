@@ -20,7 +20,7 @@ a.btn:hover{background:#d80000; color:#fff;}
 .content-container h3{font-size:21px; margin-bottom:10px; padding-top:10px;}
 .content a{border-bottom:1px dashed #b80000;}
 
-.brand{float:left; display:block;}
+.brand{float:left; display:inline-block;}
 .brand h1{margin:0; padding:0; font-size:50px; font-family: "HelveticaNeueLTPro-Bd", "Helvetica Neue LT Pro Bold", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue LT Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; color:#fff; font-weight:600; font-stretch:normal; line-height:1em;} 
 .brand, .brand:hover{color:#fff;}
 
@@ -95,19 +95,24 @@ aside{float:left; width:20%; margin-top:17px;}
 
 /* Search Results */
 
-
 .searchResults h1 { font-size:36px; margin-bottom:15px;}
 .searchResults p.searchQuery {color:#333; margin-bottom:10px;}
 
-.searchResults ul#SearchResults {padding-left:20px;}
-.searchResults ul#SearchResults li {margin-bottom:20px; list-style-type:none;}
+.searchResults ul#SearchResults {padding:0px;}
+.searchResults ul#SearchResults li {border-top:1px solid #e5e5e5; padding:20px 0 0 20px; margin-bottom:20px; list-style-type:none;}
 .searchResults ul#SearchResults p {font-size:1.1em; font-weight:normal; line-height:2em;}
 .searchResults ul#SearchResults a.searchResultHeader {font-size:1.3em; font-weight:bold; text-decoration:none; margin:20px 0 8px 0;}
 .searchResults ul#SearchResults a {text-decoration:none;}
+.searchResults #PageNumbers {border-top:1px solid #e5e5e5;padding-top:20px;}
+.searchResults #PageNumbers .pagination {float:left;}
+.searchResults #PageNumbers p {float:right;}
+.searchResults #PageNumbers .next {margin-left:20px;}
+.searchResults #PageNumbers .prev {margin-right:20px;}
 
+/* Footer */
 .footer{color:#999; background:#ededed; padding:20px 0; font-size:11px; line-height:22px;}
 .footer a{color:#999;}
-.footer .left{float:left; color:#000; display:block;}
+.footer .left{float:left; color:#000; display:block; margin-bottom:20px;}
 .footer .right{float:right; display:block;}
 .footer span{padding:0 3px; color:#bbb;}
 .footer .primary, .footer .primary ul{display:inline; margin:0; padding:0;}

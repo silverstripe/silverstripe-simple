@@ -27,21 +27,23 @@
              
     <% if Results.MoreThanOnePage %>
     <div id="PageNumbers">
-        <% if Results.NotLastPage %>
-        <a class="next" href="$Results.NextLink" title="View the next page">Next</a>
-        <% end_if %>
-        <% if Results.NotFirstPage %>
-        <a class="prev" href="$Results.PrevLink" title="View the previous page">Prev</a>
-        <% end_if %>
-        <span>
-            <% control Results.Pages %>
-                <% if CurrentBool %>
-                $PageNum
-                <% else %>
-                <a href="$Link" title="View page number $PageNum">$PageNum</a>
-                <% end_if %>
-            <% end_control %>
-        </span>
+        <div class="pagination">
+            <% if Results.NotFirstPage %>
+            <a class="prev" href="$Results.PrevLink" title="View the previous page">←</a>
+            <% end_if %>
+            <span>
+                <% control Results.Pages %>
+                    <% if CurrentBool %>
+                    $PageNum
+                    <% else %>
+                    <a href="$Link" title="View page number $PageNum" class="go-to-page">$PageNum</a>
+                    <% end_if %>
+                <% end_control %>
+            </span>
+            <% if Results.NotLastPage %>
+            <a class="next" href="$Results.NextLink" title="View the next page">→</a>
+            <% end_if %>
+        </div>    
         <p>Page $Results.CurrentPage of $Results.TotalPages</p>
     </div>
     <% end_if %>
