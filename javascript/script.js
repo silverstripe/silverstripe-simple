@@ -63,5 +63,20 @@ jQuery.noConflict();
 				$('span.search-bubble-arrow').removeAttr("style");
 			}
 		});
+
+		/* removes text from search form on focus and replaces it on unfocus - if text is entered then it does not get replaced with default on unfocus */
+		$('#SearchForm_SearchForm_Search').each(function() {
+		    var default_value = this.value;
+		    $(this).focus(function() {
+		        if(this.value == default_value) {
+		            this.value = '';
+		        }
+		    });
+		    $(this).blur(function() {
+		        if(this.value == '') {
+		            this.value = default_value;
+		        }
+		    });
+		});
     });
 }(jQuery));
