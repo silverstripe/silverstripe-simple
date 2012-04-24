@@ -42,23 +42,23 @@ a.btn:hover{background:#d80000; color:#fff;}
 .search-dropdown-icon {display:none;}
 .search-bar .search-bubble-arrow {display:none;}
 .search-bar form {margin:10px 0 0 0; float:right; width:200px;}
-.search-bar form fieldset {position:relative; padding:0; margin:0;background:#ededed; border:1px solid #888; border-radius:4px;}
+.search-bar form fieldset {position:relative; padding:0; margin:0; border:none;}
 .search-bar form div.field {margin:0;}
-.search-bar form div.field .middleColumn {float:none; width:100%; overflow:hidden;}
-.search-bar form input.text {padding-left:32px; float:left; color:#888; margin:0; border:0px; border-radius:4px; background:transparent;}
-.search-bar form input.action {display:block; font-size:0; line-height:0; background:transparent url(../images/search-icon.png) 5px 5px no-repeat; text-indent:-9999em; position:absolute; left:0px; cursor:pointer; height:32px; width:35px; border:none;
+.search-bar form div.field .middleColumn {float:none; width:100%; position:relative;}
+.search-bar form input.text {width:155px; padding-left:10px; padding-right:35px; color:#888; margin:0; border:0px; border-radius:20px; background:#fff; border:1px solid #161616;}
+.search-bar form input.action {display:block; font-size:0; line-height:0; background:transparent url(../images/search-icon.png) 5px 6px no-repeat; text-indent:-9999em; position:absolute; right:0px; cursor:pointer; height:32px; width:35px; border:none;
 							border-top-left-radius:4px; border-bottom-left-radius:4px; padding:0;}
-.search-bar form input.action:active {background:transparent url(../images/search-icon-active.png) center 5px no-repeat;}
-.search-bar form input:focus, .header textarea:focus {outline:none; background:#fff;}
+.search-bar form input.action:active {background:transparent url(../images/search-icon-active.png) 5px 6px no-repeat;}
+.search-bar form input:focus, .header textarea:focus {outline:none;}
 
 /* navigation visible when menu items overflow the 1100px width and when users don't have javascript enabled*/
  
 .header .primary ul {float:right; margin:24px -15px 0 0; white-space:normal; padding:0;} 
-.header .primary ul .menu-bubble-arrow {display:none;}
 .header .primary ul li{float:left; margin:0 0 10px 6px; padding-bottom:0; background-image:none; list-style-type:none;}
 .header .primary ul li.current a, .header .primary ul li.section a{background-color:#525252;}
 .header .primary li a{letter-spacing:1px; color:#888; font-size:15px; font-family:Helvetica, Arial, sans-serif; padding:6px 8px; border-radius:4px; font-weight:bold; display:block; -moz-transition:color 0.2s; -webkit-transition:color 0.2s; transition:color 0.2s;}
-.header .primary li a:hover{color:#fff;} 
+.header .primary li a:hover{color:#fff;}
+.header .primary li .nav-arrow {display:none;}
 .header .primary li.section a, .header .primary li.current a{color:#fff;}
  
  /* fancy javascript initiated menu - for when menu items fit within the 1100px width (nowrap)*/
@@ -66,6 +66,7 @@ a.btn:hover{background:#d80000; color:#fff;}
 .header .primary ul.standard-nav{float:right; margin:24px -15px 0 0; white-space:nowrap;}
 .header .primary ul.standard-nav .menu-bubble-arrow {display:none;}
 .header .primary .standard-nav li{float:left; padding-bottom:20px; margin:0 5px;}
+.header .primary .standard-nav li .nav-arrow {display:none;}
 .header .primary .standard-nav li.section, .header .primary li.current {background:url(../images/selected.png) center bottom no-repeat;}
 .header .primary ul.standard-nav li.current a, .header .primary ul.standard-nav li.section a {background:none;}
 
@@ -130,26 +131,28 @@ aside{float:left; width:20%; margin-top:17px;}
 }
 
 @media only screen and (max-width: 700px) {
-.brand{float:none; display:inline-block; margin-left:12px; margin-bottom:10px;}
-.brand h1{font-size:30px;}
+.brand{float:none; display:inline-block; margin-left:22px; margin-bottom:24px;}
+.brand h1{font-size:40px;}
 .header {padding:0px;}
-.header .inner{padding:10px 0 0 0;}
-.header .primary {height:42px;}
-.primary .nav-open-button {z-index:100; position:relative; padding:6px 0; background:#525252; width:100%; height:30px; display:block; cursor:pointer; font-family:'WebSymbolsRegular'; font-size:20px; color:#ededed; text-indent:10px; 
-                          text-align:left; line-height:30px; -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);} 
-.primary .nav-open-button .menu-text {letter-spacing:1px; margin-left:10px; color:#fff; font-size:15px; font-family:Helvetica, Arial, sans-serif; font-weight:bold;}
-.primary ul#nav .menu-bubble-arrow {z-index:110; display:none; color:#525252; height:20px; width:20px;position:absolute; left:10px; top:-7px; font-family:'WebSymbolsRegular'; font-size:20px;text-align:center; line-height:20px;
-                                    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);}
-.header .primary ul {position:relative; background:#ededed; display:none; float:left; margin:0; padding:0; width:100%; white-space:normal; -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);-moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);} 
-.header .primary ul#nav li{width:100%; margin:0; float:none; background:none;}
-.header .primary ul#nav li a {padding:8px 0 8px 40px; font-weight:normal;}
+.header .inner{padding:20px 0 0 0;}
+.header .primary {}
+.header .primary .nav-open-button {z-index:100; width:20px; height:20px; position:absolute; right:20px; top:30px; display:block; cursor:pointer; font-family:'WebSymbolsRegular'; font-size:20px; color:#ededed;} 
+.header .primary ul {z-index:10; position:relative; background:#e5e5e5; display:none; float:left; margin:0; padding:0; width:100%; white-space:normal; } 
+.header .primary ul#nav li {border-radius:0; width:100%; margin:0; float:none; background:none; position:relative;}
+.header .primary ul#nav li .nav-arrow {display:block; position:absolute; right:20px; top:0px; font-family:'WebSymbolsRegular'; font-size:12px; color:#999; text-align:center; vertical-align:middle; line-height:38px;}
+.header .primary ul#nav li:last-child a {border-bottom:none;}
+.header .primary ul#nav li a {border-radius:0; padding:10px 0 10px 22px; font-weight:normal; border-bottom:1px solid #bbb;}
 .header .primary ul#nav li a:hover {color:#525252;}
-.header .primary ul#nav li.current a, .header .primary ul#nav li.section a{border-radius:0; background-color:#999; color:#fff;}
+.header .primary ul#nav li.current a, .header .primary ul#nav li.section a{background-color:#999; color:#fff;}
+.header .primary ul#nav li.current .nav-arrow, .header .primary ul#nav li.section .nav-arrow {display:none;}
 /* Search Form */
-.search-bar {z-index:200; position:absolute; top:50px; display:none; padding:5px 0; height:32px; margin:0; background-color:#303030;-webkit-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);-moz-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.3);}
-.search-dropdown-icon {display:block; cursor:pointer; width:20px; height:20px; position:absolute; right:10px; top:14px; font-family:'WebSymbolsRegular'; font-size:20px; color:#ededed; text-align:center; line-height:20px;}
-.search-bar .search-bubble-arrow {display:block; height:20px; width:20px;position:absolute; right:14px; top:-12px; font-family:'WebSymbolsRegular'; font-size:20px; color:#303030; text-align:center; line-height:20px;}
-.search-bar form {display:none; float:right; margin:0 6px; height:32px;}
+.search-bar {width:100%; position:relative; top:0; right:0; display:none; padding:20px 0; height:32px; margin:0; background-color:#ededed;}
+.search-dropdown-icon {display:block; cursor:pointer; width:20px; height:20px; position:absolute; right:60px; top:32px; font-family:'WebSymbolsRegular'; font-size:20px; color:#ededed; text-align:center; line-height:20px;}
+.search-bar .search-bubble-arrow {display:block; height:20px; width:20px;position:absolute; right:62px; top:-12px; font-family:'WebSymbolsRegular'; font-size:20px; color:#e5e5e5; text-align:center; line-height:20px;}
+.search-bar form {display:none; margin:0;  height:32px;}
+.search-bar form fieldset {padding:0 18px; position:absolute; left:0; right:0;}
+.search-bar form input.text {width:auto; position:absolute; right:0; left:0; border:1px solid #e5e5e5; background:#fff;}
+.search-bar form input.action {right:20px;}
 
 /* Main Content */
 .main{padding:20px 0 45px;}
