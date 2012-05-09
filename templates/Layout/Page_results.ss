@@ -29,7 +29,7 @@
     <div id="PageNumbers">
         <div class="pagination">
             <% if Results.NotFirstPage %>
-            <a class="prev" href="$Results.PrevLink" title="View the previous page">←</a>
+            <a class="prev" href="$Results.PrevLink" title="View the previous page">&larr;</a>
             <% end_if %>
             <span>
                 <% control Results.Pages %>
@@ -41,7 +41,7 @@
                 <% end_control %>
             </span>
             <% if Results.NotLastPage %>
-            <a class="next" href="$Results.NextLink" title="View the next page">→</a>
+            <a class="next" href="$Results.NextLink" title="View the next page">&rarr;</a>
             <% end_if %>
         </div>    
         <p>Page $Results.CurrentPage of $Results.TotalPages</p>

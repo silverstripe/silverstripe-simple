@@ -2,81 +2,86 @@ jQuery.noConflict();
 
 (function($) {    
     $(document).ready(function() {
-        
- 		/* turns on specific styling when main nav items are less than the width of the header otherwise it defaults to mediaquery multiline styling */
- 		function toggleNavigationClassByWidth(){
-            var primaryNavigation = $('.primary').first();
-            var mainNavigation = $(primaryNavigation).find('ul').first();
-
-            if(primaryNavigation.outerWidth() > mainNavigation.outerWidth()) { 
-               mainNavigation.addClass("standard-nav"); //if the nav ul fits within its container the standard styling is applied
-            }
-            else {
-               mainNavigation.removeClass("standard-nav"); 
-            }
-        }
-        
-        var resizeTimer; //constantly checks for the size of the browser window so correct style is applied.
-        $(window).resize(function(){
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(toggleNavigationClassByWidth, 100);
-        }).load(function(){
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(toggleNavigationClassByWidth, 100);
-        });
-
- 		/* show/hide search form when window width less than 700px */
- 		$('span.search-dropdown-icon').on('click',function() {
- 			if ($(window).width() < 700) { // checks for width of window - if it is less than 700px
-	 			if ($('div.search-bar').is(":hidden")){ //checks if ul#nav is hidden
-					$('div.search-bar').slideDown('fast'); // slides the Search bar down
-					$('div.search-bar form').fadeIn(500); // Fades the Search form in 
-					return false;
-				} else {
-					$('div.search-bar').slideUp('fast'); // slides the Search bar up
-					$('div.search-bar form').hide(); // Fades the Search form out 
-					return false;
+		var searchBarButton = $("span.search-dropdown-icon");
+		var searchBar = $('div.search-bar');
+		var menuButton = $("span.nav-open-button");
+		var menu = $('.header .primary ul');										 
+		var mobile = false;
+		var changed = false;
+		
+		$('body').append('<div id="media-query-trigger"></div>');
+		
+		function menuWidthCheck() {								  
+			var header_w = $('header .inner').width();
+			var elements_w = menu.width() + $('.brand').width();
+			
+			if ((header_w < elements_w) || ($(window).width() <= 768)) {
+				$('body').addClass('tablet-nav');
+			}
+			else {
+				$('body').removeClass('tablet-nav');				
+			}
+			
+			mobile_old = mobile;
+			if ($('#media-query-trigger').css('visibility') == 'hidden') {
+				mobile = false;
+			}
+			else {
+				mobile = true;
+			}
+			
+			if (mobile_old != mobile) {
+				changed = true;
+			}
+			else {
+				changed = false;
+			}
+		}
+		
+		menuWidthCheck();
+		
+		$(window).resize(function() {
+			console.log($(window).innerWidth());
+			menuWidthCheck();
+			
+			if (!mobile) {
+				menu.show();
+				searchBar.show();		
+			}
+			else {
+				if (changed) {
+					menu.hide();
+					searchBar.hide();	
 				}
 			}
 		});
 
- 		/* show/hide main nav menu when window width less than 700px */
-		$('span.nav-open-button').on('click',function() {
- 			if ($(window).width() < 700) { // checks for width of window - if it is less than 700px
- 				if ($('ul#nav').is(":hidden")){ //checks if ul#nav is hidden
-					$('ul#nav').slideDown('fast'); // slides the nav menu down 
-					$('header span.menu-bubble-arrow').show(); // shows the nav menu arrow 
-					return false;
-				} else {
-					$('ul#nav').slideUp('fast'); // slides the nav menu up 
-					$('header span.menu-bubble-arrow').removeAttr("style"); // hides the nav menu arrow 
-					return false;
-				}
-			}
+ 		/* toggle navigation and search in mobile view */		
+		searchBarButton.click(function() {
+			menu.slideUp();													 
+			searchBar.slideToggle('fast');
 		});
-		/* clears any inline styles when window is resized above 700px */
-		$(window).resize(function () {
-			if ($(this).width() >= 700) {
-				$('div.search-bar').removeAttr("style");
-				$('ul#nav').removeAttr("style");
-				$('div.search-bar form').removeAttr("style");
-				$('span.search-bubble-arrow').removeAttr("style");
-			}
-		});
+		
+		menuButton.click(function() {
+			searchBar.slideUp();													 
+			menu.slideToggle('fast');
+		});	
 
 		/* removes text from search form on focus and replaces it on unfocus - if text is entered then it does not get replaced with default on unfocus */
-		$('#SearchForm_SearchForm_Search').each(function() {
-		    var default_value = this.value;
-		    $(this).focus(function() {
-		        if(this.value == default_value) {
-		            this.value = '';
-		        }
-		    });
-		    $(this).blur(function() {
-		        if(this.value == '') {
-		            this.value = default_value;
-		        }
-		    });
-		});
+		 $('#SearchForm_SearchForm_action_results').val('L');
+		 var searchField = $('#SearchForm_SearchForm_Search');
+		 var default_value = searchField.val();
+		 searchField.focus(function() {
+			$(this).addClass('active');
+			if(searchField.val() == default_value) {
+				searchField.val('');
+			}
+		 });
+		 searchField.blur(function() {
+			  if(searchField.val() == '') {
+					searchField.val(default_value);
+			  }
+		 });
+		
     });
 }(jQuery));
