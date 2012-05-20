@@ -1,7 +1,8 @@
 <header class="header" role="banner">
 	<div class="inner">
 		<a href="$BaseHref" class="brand" rel="home">
-			<h1>Simple.</h1>
+			<h1>$SiteConfig.Title</h1>
+			<p>$SiteConfig.Tagline</p>
 		</a>
 		<% if SearchForm %>
 			<span class="search-dropdown-icon">L</span>
