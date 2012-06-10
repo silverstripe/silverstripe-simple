@@ -35,3 +35,38 @@ table td, .content table th {padding:2px 5px;border:1px solid #d4d4d4; vertical-
 table th {text-align:left; font-weight:bold;}
 
 p.intro{font-family:"CamboRegular", Georgia, "Times New Roman", Times, serif; font-size:22px; line-height:32px; margin-bottom:20px; color:#222;}
+
+/* WYSIWYG EDITOR ALIGNMENT CLASSES 
+-------------------------------------------- */
+.typography .left {
+  text-align: left;
+}
+.typography .center {
+  text-align: center;
+}
+.typography .right {
+  text-align: right;
+}
+
+/* IMAGES 
+-------------------------------------------- */
+.typography img {
+  border: none;
+}
+  .typography img.right {
+    float: right;
+    margin-left: 20px;
+  }
+  .typography img.left {
+    float: left;
+  }
+  .typography img.leftAlone {
+    float: left;
+    margin-right: 100%;
+  }
+  .typography img.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
