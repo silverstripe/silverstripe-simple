@@ -2,71 +2,107 @@
 @font-face {
     font-family: 'CamboRegular';
     src: url('../webfonts/Cambo-Regular-webfont.eot');
-    src: url('../webfonts/Cambo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../webfonts/Cambo-Regular-webfont.woff') format('woff'),
-         url('../webfonts/Cambo-Regular-webfont.ttf') format('truetype'),
-         url('../webfonts/Cambo-Regular-webfont.svg#CamboRegular') format('svg');
+    src: url('../webfonts/Cambo-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/Cambo-Regular-webfont.woff') format('woff'), url('../webfonts/Cambo-Regular-webfont.ttf') format('truetype'), url('../webfonts/Cambo-Regular-webfont.svg#CamboRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-
-@font-face{ 
-  font-family: 'WebSymbolsRegular';
-  src: url('../webfonts/websymbols-regular-webfont.eot');
-  src: url('../webfonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../webfonts/websymbols-regular-webfont.woff') format('woff'),
-       url('../webfonts/websymbols-regular-webfont.ttf') format('truetype'),
-       url('../webfonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
-       font-weight: normal;
-       font-style: normal;
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('../webfonts/websymbols-regular-webfont.eot');
+    src: url('../webfonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/websymbols-regular-webfont.woff') format('woff'), url('../webfonts/websymbols-regular-webfont.ttf') format('truetype'), url('../webfonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    color: #b80000;
+}
+p {
+    margin: 0 0 17px;
+    font-size: 13px;
+    line-height: 21px;
+}
+em {
+    font-style: normal
+}
+a {
+    color: #b80000;
+    text-decoration: none;
+}
+a:hover {
+    color: #d80000
+}
+table {
+    border-collapse: collapse;
+    border: 1px solid #d4d4d4;
+    border-spacing: 0;
+    margin: 0 0 10px;
+}
+  table tr:nth-child(even) {
+      background-color: #ededed
   }
-
-body {font-size:13px; font-family:Arial, Helvetica, sans-serif;}
-h1, h2,h3,h4,h5,h6 {font-family:"CamboRegular", Georgia, "Times New Roman", Times, serif; font-weight:normal; color:#b80000;}
-p {margin:0 0 17px; font-size:13px; line-height:21px;}
-em {font-style:normal;}
-a {color:#b80000; text-decoration:none;}
-a:hover {color:#d80000;}
-
-table {border-collapse:collapse; border:1px solid #d4d4d4; border-spacing:0; margin:0 0 10px;}
-table tr:nth-child(even) {background-color:#ededed;}
-table tr.even, .content table th, .content thead td {background-color:#ededed;}
-table td, .content table th {padding:2px 5px;border:1px solid #d4d4d4; vertical-align:top;}
-table th {text-align:left; font-weight:bold;}
-
-p.intro{font-family:"CamboRegular", Georgia, "Times New Roman", Times, serif; font-size:22px; line-height:32px; margin-bottom:20px; color:#222;}
-
+  table tr.even,
+  .content table th,
+  .content thead td {
+      background-color: #ededed
+  }
+  table td,
+  .content table th {
+      padding: 2px 5px;
+      border: 1px solid #d4d4d4;
+      vertical-align: top;
+  }
+  table th {
+      text-align: left;
+      font-weight: bold;
+  }
+p.intro {
+    font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    color: #222;
+}
 /* WYSIWYG EDITOR ALIGNMENT CLASSES 
 -------------------------------------------- */
 .typography .left {
-  text-align: left;
+    text-align: left
 }
 .typography .center {
-  text-align: center;
+    text-align: center
 }
 .typography .right {
-  text-align: right;
+    text-align: right
 }
-
 /* IMAGES 
 -------------------------------------------- */
 .typography img {
-  border: none;
+    border: none
 }
-  .typography img.right {
+.typography img.right {
     float: right;
     margin-left: 20px;
-  }
-  .typography img.left {
-    float: left;
-  }
-  .typography img.leftAlone {
+}
+.typography img.left {
+    float: left
+}
+.typography img.leftAlone {
     float: left;
     margin-right: 100%;
-  }
-  .typography img.center {
+}
+.typography img.center {
     float: none;
     margin-left: auto;
     margin-right: auto;
     display: block;
-  }
+}
