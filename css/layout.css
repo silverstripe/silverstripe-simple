@@ -459,9 +459,8 @@ aside {
 }
 @media only screen and (max-width: 960px) { 
 	.content img {
-	    width: 97%;
+	    max-width: 97%;
 	    height: auto;
-	    margin: 0 0 20px;
 	}
 	.header .primary ul {
 	    margin-left: -12px;
@@ -617,8 +616,9 @@ aside {
 	}
 		.content-container h1 {
 		    font-size: 30px;
+			 line-height:35px;
 		    margin-bottom: 15px;
-		    padding-bottom: 3px;
+		    padding-bottom: 10px;
 		}
 		.content-container p {
 		    font-size: 14px;
