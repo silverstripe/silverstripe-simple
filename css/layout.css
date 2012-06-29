@@ -56,13 +56,20 @@ a.btn:hover {
     background: #d80000;
     color: #fff;
 }
-.content img {
+.content img.left, .content img.right {
     border: 5px solid #d7d7d7;
     max-width: 60%;
     height: auto;
-    float: left;
-    margin: 6px 20px 10px 0;
 }
+.content img.left {
+	float: left;
+  margin: 6px 20px 10px 0;
+}
+content img.right {
+	float: right;
+  margin: 6px 0 10px 20px;
+}
+
 .content ul {
     margin: 20px 0 20px 30px
 }
