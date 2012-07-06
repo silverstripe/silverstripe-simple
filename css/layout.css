@@ -141,8 +141,7 @@ a.btn:hover {
 }
 .search-bar form input.text {
     width: 155px;
-    padding-left: 10px;
-    padding-right: 35px;
+    padding:6px 35px 6px 10px;
     color: #888;
     margin: 0;
     border: none;
@@ -168,6 +167,11 @@ a.btn:hover {
 .search-bar form input.action:hover {
     color: #000
 }
+
+#Search {
+	padding:0;
+}
+
 .search-bar form input:focus,
 .header textarea:focus {
     outline: none
@@ -331,8 +335,14 @@ aside {
     padding-bottom: 20px;
 }
 .no-sidebar .content-container {
-    float: left
+    float: left;
+    width:100%;
 }
+
+.no-sidebar aside {
+	display:none;
+}
+
 .header {
     background: #161616
 }
