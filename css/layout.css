@@ -34,28 +34,7 @@ body {
 a:link {
     -webkit-tap-highlight-color: #b80000
 }
-a.btn {
-    background: #b80000;
-    color: #fff;
-    display: inline-block;
-    border-radius: 4px;
-    padding: 6px 15px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: none !important;
-    font-size: 13px;
-}
-a.btn:after {
-    content: '\2192';
-    padding-left: 10px;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-a.btn:hover {
-    background: #d80000;
-    color: #fff;
-}
+
 .content img.left, .content img.right {
     border: 5px solid #d7d7d7;
     max-width: 60%;
@@ -170,6 +149,8 @@ content img.right {
     background: none;
     font-family: 'WebSymbolsRegular';
     color: #848484;
+	 border-radius:0;
+	 margin-top:0;
 }
 .search-bar form input.action:hover {
     color: #000

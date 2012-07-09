@@ -65,6 +65,12 @@ div.field {
     padding:10px;
 }
 
+.middleColumn div.field {
+	padding-left:0;
+	padding-right:0;
+}
+
+
 .ui-widget {
     font-family: Arial, Helvetica, sans-serif
 }
@@ -102,9 +108,10 @@ form textarea,
 form .textajaxuniquetext,
 form select {
     width: 98%;
-    padding: 3px 1%;
+    padding: 6px 1%;
     font-size: 15px;
     background-color:#fff;
+	 border: 1px solid #dad9d9;
 }
 
 form input.text:focus,
@@ -120,7 +127,7 @@ form input.sitetreeurlsegment {
 form span.readonly {
     font-size: 16px
 }
-form input[disabled] {
+form input[disabled], form textarea[disabled] {
     background-color: #f7f7f7;
     border: 1px solid #dad9d9;
 }
@@ -149,16 +156,42 @@ form .optionset li {
 }
 form .checkboxset li .checkbox,
 form .optionset li .radio{
-    margin-top: 5px;
+    margin-top: 1px;
 }
 
-input[type="submit"] {
-    border-radius:20px;
-    background-color:#b80000;
-    border:none;
-    color:#fff;
-    font-weight: bold;
+a.btn, button, input[type="submit"] {
+    background: #b80000;
+    color: #fff;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 6px 15px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: none !important;
     font-size: 13px;
+	 border:none;
+}
+
+a.btn:hover, button, input[type="submit"]:hover {
+    background: #d80000;
+    color: #fff;
+}
+
+button{
+	background-color:#a4a4a4;
+}
+
+.ss-uploadfield-item-info button{
+		margin-top:4px !important;
+		float:left;
+}
+
+a.btn:after {
+    content: '\2192';
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .resetformaction {
