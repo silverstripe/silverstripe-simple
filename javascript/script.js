@@ -60,7 +60,6 @@ jQuery.noConflict();
 			menuWidthCheck();
 			
 			$(window).resize(function() {
-				console.log($(window).innerWidth());
 				menuWidthCheck();
 				
 				if (!mobile) {
