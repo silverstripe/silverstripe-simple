@@ -190,9 +190,6 @@ input[type="submit"] {
         position:relative;
         padding-bottom: 20px;
     }
-    .main div.field {
-        border-bottom:1px solid #E5E5E5;
-    }
     .checkbox label.right,
     .radio label.right {
         float:left;
