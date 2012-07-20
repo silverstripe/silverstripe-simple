@@ -40,10 +40,10 @@ form .bad {
     margin-top: 3px;
 }
 .checkbox label.right,
-.radio label.right {
-    float:left;
-    text-align: left;
-}
+    .radio label.right {
+        text-align: left;
+        padding-left: 0px;
+    }
 #MemberLoginForm_LoginForm_action_dologin,
 .Actions .action {
     padding: 6px 20px
@@ -83,8 +83,6 @@ form label.left {
     font-size: 13px;
 }
 form label.right {
-    max-width:50%;
-    float: right;
     padding-left: 5%;
     display: block;
     font-size: 13px;
@@ -235,15 +233,16 @@ a.btn:after {
     form label.right {
         position: absolute;
         right: 10px;
+        top: 10px;
         margin-top: 3px;
-        width:50%;
-        padding:0;
+        width: 50%;
+        padding: 0;
     }
     .checkbox label.right,
     .radio label.right {
         position:relative;
         right:auto;
-        margin-top:0;
+        margin-top:-10px;
     }
 }
 
