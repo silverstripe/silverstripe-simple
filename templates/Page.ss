@@ -31,7 +31,7 @@ Change it, enhance it and most importantly enjoy it!
 <body class="$ClassName<% if Menu(2) %><% else %> no-sidebar<% end_if %>">
 <% include Header %>
 <div class="main" role="main">
-	<div class="inner">
+	<div class="inner typography">
 		$Layout
 	</div>
 </div>

@@ -1,4 +1,4 @@
-<div id="Content" class="searchResults typography">
+<div id="Content" class="searchResults">
     <h1>$Title</h1>
      
     <% if Query %>
