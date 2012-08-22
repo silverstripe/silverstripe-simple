@@ -42,6 +42,53 @@ a {
 a:hover {
     color: #d80000
 }
+
+.typography h1 a{
+  border:none;
+}
+
+.typography img {
+    border: 5px solid #d7d7d7;
+    max-width: 60%;
+    height: auto;
+    float: left;
+    margin: 6px 20px 10px 0;
+}
+.typography ul {
+    margin: 20px 0 20px 30px
+}
+.typography li {
+    line-height: 22px;
+    margin-bottom: 5px;
+    list-style-type: disc;
+}
+.typography h1 {
+    font-size: 36px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 6px;
+    margin: 0 0 23px 0;
+    line-height: 45px;
+}
+  .typography h1 span.amp {
+      font-family: Baskerville,"Goudy Old Style","Palatino","Book Antiqua",Georgia;
+      font-style: italic;
+  }
+.typography h2 {
+   font-size: 24px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    line-height: 32px;
+}
+.typography h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.typography a {
+    border-bottom: 1px dashed #b80000
+}
+
+
 table {
     border-collapse: collapse;
     border: 1px solid #d4d4d4;

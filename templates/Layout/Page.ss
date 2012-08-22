@@ -1,4 +1,4 @@
-<div class="content-container typography">	
+<div class="content-container">	
 	<article>
 		<h1>$Title</h1>
 		<div class="content">$Content</div>
