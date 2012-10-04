@@ -30,7 +30,7 @@ input[type="checkbox"], input.checkbox, .checkboxes input {vertical-align:bottom
 .ie6 input {vertical-align: text-bottom;}
 label, input[type="button"], input[type="submit"], input[type="image"], button, .btn {cursor:pointer;}
 button, input, select, textarea {margin:0;}
-.checkbox, .radio {float:left; width:13px; height:13px; margin-right:6px; padding:0;}
+/* .checkbox, .radio {float:left; width:13px; height:13px; margin-right:6px; padding:0;} */
 
 button {width:auto; overflow:visible;}
 .ie7 img {-ms-interpolation-mode: bicubic;}

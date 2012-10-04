@@ -1,10 +1,209 @@
-.ui-widget,
-.ui-widget input,
-.ui-widget select,
-.ui-widget textarea,
-.ui-widget button {
-    font-family: Arial, Helvetica, sans-serif !important
+/** ----------------------------------------------------------
+ *
+ * This stylesheet includes both generic form styles and 
+ *    additional form styles for the User Defined Form Module. 
+ *
+ ** ------------------------------------------------------- */
+
+
+/* GENERIC FORMS
+----------------------------------------------- */
+
+form {
+    max-width: 500px;
+    width: 50%;
 }
+div.field {
+    margin: 10px 0 15px;
+}
+form label {
+    margin-bottom: 5px;
+}
+    form label.left {
+        display: block;
+        font-weight: bold;
+    }
+    form label.right {
+        font-size: 12px;
+        color: #888;
+    }
+form input.text,
+form textarea,
+form .textajaxuniquetext,
+form select {
+    width: 100%;
+    max-width: 400px;
+    padding: 6px 5px;
+    font-size: 15px;
+    background-color: #fff;
+    border: 1px solid #dad9d9;
+}
+form input.text:focus,
+form textarea:focus,
+form .textajaxuniquetext:focus,
+form select:focus {
+    outline:none;
+}
+form input[disabled], form textarea[disabled] {
+    background-color: #f7f7f7;
+    border: 1px solid #dad9d9;
+}
+
+
+/* Radio and Checkbox */
+.field .checkbox, .field .radio {
+    float: left; 
+    width: 13px; 
+    height: 13px; 
+    margin-right: 6px; 
+    margin-top: 3px;
+    padding: 0;
+}
+    .checkbox label.right,
+    .radio label.right {
+        float: left;
+    }
+
+
+/* Messages */
+form .message {
+    background-color: #fef4ba;
+    padding: 5px 10px;
+    border: 1px solid #e8c805;
+    border-radius: 3px;
+}
+    form .good {
+        background-color: #ecf9d0;
+        border-color: #8fbe00;
+    }
+    form .bad, form .required {
+        background-color: #f9d0d0;
+        border-color: #cf0000;
+        color: #b80000;
+    }
+
+
+/* ACTIONS */
+.Actions {
+    margin-bottom: 20px;
+}
+    a.btn, button, input[type="submit"], .Actions .action {
+        background: #b80000;
+        color: #fff;
+        display: inline-block;
+        border-radius: 4px;
+        padding: 6px 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        font-size: 13px;
+        margin-right: 10px;
+    }
+    a.btn:hover, button, input[type="submit"]:hover, .Actions .action:hover {
+        background: #d80000;
+        color: #fff;
+    }
+    a.btn {
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+    a.btn:after {                   /* creates arrow in button */
+        content: '\2192';
+        padding-left: 10px;
+    }
+    .Actions:after {
+        color: #B94A48;
+        content: "* Indicates a required field";
+        display: inline-block;
+        font-weight: normal;
+        margin-top: 9px;
+    }
+    #MemberLoginForm_LoginForm .Actions:after {
+        display: none;
+    }
+
+
+/* AREA SPECIFIC */
+    /* LOGIN and FORGOT PASSWORD */
+    #Remember {
+        min-height: 20px;
+    }
+
+    /* Search / Login */
+    .header form .middleColumn {
+        /* float: none;
+        width: 100% !important; */
+    }
+
+
+
+
+
+
+/* USER DEFINED USER FORM MODULE STYLES
+----------------------------------------------- */
+
+/*Generic and mixed*/
+.FormHeading {
+    clear: both;
+    padding-top: 15px;
+}
+form .date .middleColumn input {
+    background: transparent url(../images/icons/your_icon_here.png) no-repeat scroll 90px 5px;
+    width: 114px;
+}
+.Actions input.resetformaction {                  /* Clear button */
+    float: left;
+    background-color: #888;
+}
+.Actions input.resetformaction:hover {            /* Clear button */
+    background-color: #aaa;
+}
+
+/* Labels */
+.checkbox label.right {
+    font-size: 13px;                            /* reset to default */
+    color: #333;                                /* reset to default */
+}
+form .requiredField label.left:after {
+    color: #B94A48;
+    content: "*";
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 3px;
+}
+
+/* Radio / Checkbox */
+form .checkboxset ul,
+form .optionset ul {
+    margin: 0;
+}
+    form .checkboxset li,
+    form .optionset li {
+        margin-bottom: 5px;
+        list-style-type:none;
+    }
+
+/* Messages */
+span.message {
+    margin: 10px 0;
+    display: block;
+    max-width: 390px;
+    clear: left;
+}
+div.holder-required {               /* This class needs to be changed - is used for both input and div */
+    /* background-color: #f9d0d0;
+    border: 1px solid #cf0000;
+    padding: 10px;
+    margin-left: -11px; */
+}
+form input.holder-required {        /* This class needs to be changed - is used for both input and div */
+    border: 1px solid #cf0000; 
+}
+
+/* Error messages */
 input:invalid,
 textarea:invalid {
     border-radius: 1px;
@@ -16,234 +215,39 @@ textarea:invalid {
 .no-boxshadow textarea:invalid {
     background-color: #f0dddd
 }
-form {
-    max-width: 70%;
-}
-form .message {
-    float:right;
-    padding-top: 6px;
-    color:#b80000;
-}
-.holder-required {
-    background-color:#ffb8b8;
-}
-form .good {
-    background-color: #ecf9d0;
-    border-color: #8fbe00;
-}
-form .bad {
-    background-color: #f9d0d0;
-    border-color: #be0000;
-}
-.checkbox,
-.radio {
-    margin-top: 3px;
-}
-.checkbox label.right,
-    .radio label.right {
-        text-align: left;
-        padding-left: 0px;
-    }
-#MemberLoginForm_LoginForm_action_dologin,
-.Actions .action {
-    padding: 6px 20px
-}
-#MemberLoginForm_LoginForm,
-#MemberLoginForm_LostPasswordForm {
-    max-width: 500px
-}
-#ForgotPassword a {
-    margin-top: 15px
-}
-#ForgotPassword {
-    margin-top: 6px
-}
-div.field {
-    width: 100%;
+
+/* To test - potentially not needed? */
+.ss-uploadfield-item-info button{
+    margin-top: 4px !important;
     float: left;
-    margin-bottom: 10px;
-    padding:10px;
-}
-
-.middleColumn div.field {
-	padding-left:0;
-	padding-right:0;
-}
-
-
-.ui-widget {
-    font-family: Arial, Helvetica, sans-serif
-}
-form label.left {
-    max-width:50%;
-    padding-right: 5%;
-    padding-bottom:10px;
-    margin-top: 3px;
-    display: block;
-    font-size: 13px;
-}
-form label.right {
-    padding-left: 5%;
-    display: block;
-    font-size: 13px;
-}
-.main form .middleColumn {
-    float: left;
-    width: 50% !important;
-}
-	.main form .middleColumn .middleColumn {
-	    width: 100% !important
-	}
-.header form .middleColumn {
-    float: none;
-    width: 100% !important;
-}
-.listbox option {
-    padding: 3px 0
-}
-form input.text,
-form textarea,
-form .textajaxuniquetext,
-form select {
-    width: 98%;
-    padding: 6px 1%;
-    font-size: 15px;
-    background-color:#fff;
-	 border: 1px solid #dad9d9;
-}
-
-form input.text:focus,
-form textarea:focus,
-form .textajaxuniquetext:focus,
-form select:focus {
-    outline:none;
-}
-
-form input.sitetreeurlsegment {
-    width: 200px
-}
-form span.readonly {
-    font-size: 16px
-}
-form input[disabled], form textarea[disabled] {
-    background-color: #f7f7f7;
-    border: 1px solid #dad9d9;
 }
 form .creditCardField input,
-form input.currency {
-    padding: 5px 1%;
-    width: 50px;
-}
+form input.currency,
 form input.numeric {
-    padding: 5px 1%;
     width: 50px;
 }
 form #DMYDate-month,
 form #DMYDate-day {
     width: 25px
 }
-form .checkboxset ul,
-form .optionset ul {
-    margin: 0;
-}
 
-form .checkboxset li,
-form .optionset li {
-    margin-bottom: 5px;
-    list-style-type:none;
-}
-form .checkboxset li .checkbox,
-form .optionset li .radio{
-    margin-top: 1px;
-}
 
-a.btn, button, input[type="submit"] {
-    background: #b80000;
-    color: #fff;
-    display: inline-block;
-    border-radius: 4px;
-    padding: 6px 15px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: none !important;
-    font-size: 13px;
-	 border:none;
-}
 
-a.btn:hover, button, input[type="submit"]:hover {
-    background: #d80000;
-    color: #fff;
-}
 
-button{
-	background-color:#a4a4a4;
-}
-
-.ss-uploadfield-item-info button{
-		margin-top:4px !important;
-		float:left;
-}
-
-a.btn:after {
-    content: '\2192';
-    padding-left: 10px;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.resetformaction {
-    float:right;
-    border-radius:20px;
-    background-color:#9F9F9F;
-    border:none;
-    color:#fff;
-    font-weight: bold;
-    font-size: 13px;
-}
+/* Responsive form styles
+----------------------------------------------- */
 
 @media only screen and (max-width: 700px) { 
-    .main form .middleColumn {
-	    float: right;
-	    width: 100% !important;
-	    : ;
-	}
+
+    /* To test - potentially not needed? */
 	.header form .middleColumn {
 	    float: none;
 	    width: 100% !important;
-	    : ;
 	}
 	form label.left,
 	#MemberLoginForm_LoginForm label {
 	    margin-bottom: 8px
 	}
-    div.field {
-        position:relative;
-        padding-bottom: 20px;
-    }
-    .checkbox label.right,
-    .radio label.right {
-        float:left;
-        text-align: left;
-    }
-    form label.left {
-        width:50%;
-        padding:0;
-    }
-    form label.right {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        margin-top: 3px;
-        width: 50%;
-        padding: 0;
-    }
-    .checkbox label.right,
-    .radio label.right {
-        position:relative;
-        right:auto;
-        margin-top:-10px;
-    }
 }
 
 @media only screen and (max-width: 900px) { 
@@ -253,4 +257,5 @@ a.btn:after {
 }
 
 @media only screen and (min-width: 700px) { 
+
 }

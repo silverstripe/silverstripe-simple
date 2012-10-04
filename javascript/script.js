@@ -84,6 +84,7 @@ jQuery.noConflict();
 				searchBar.slideUp();													 
 				menu.slideToggle(200);
 			});	
+
 		}
 		
     });
