@@ -44,10 +44,10 @@ body {
 	aside {
 	    float: left;
 	    width: 23%;
-	    margin-top: 20px;
+	    margin-top: 12px;
 	}
 	.no-sidebar aside {
-		display:none;
+		display: none;
 	}
 
 
@@ -219,26 +219,27 @@ body {
 	}
 
 	/* Secondary navigation */
-	.secondary h3 {
+	.main .secondary h3 {
 	    font-size: 20px;
 	    color: #b8b7b7;
-	    margin: 0 0 10px 0;
+	    margin: 0 0 8px 0;
 	    font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
 	    font-weight: normal;
 	}
-	.secondary {
+	.main .secondary {
 	    border-bottom: 1px solid #e5e5e5
 	}
-		.secondary ul {
+		.main .secondary ul {
 		    padding: 0;
 		    margin: 0;
 		}
-		.secondary li {
+		.main .secondary li {
 		    border-top: 1px solid #e5e5e5;
 		    position: relative;
 		    list-style-type: none;
+		    margin-bottom: 0;
 		}
-			.secondary li .arrow {
+			.main .secondary li .arrow {
 			    color: #b80000;
 			    padding-right: 5px;
 			    display: block;
@@ -246,16 +247,16 @@ body {
 			    line-height: 20px;
 			    position: absolute;
 			    left: 2px;
-			    top: 5px;
+			    top: 7px;
 			    -moz-transition: 0.2s;
 			    -webkit-transition: 0.2s;
 			    transition: 0.2s;
 			}
-		.secondary li:hover .arrow {
+		.main .secondary li:hover .arrow {
 		    left: 6px
 		}
-		.secondary li a {
-		    padding: 8px 0;
+		.main .secondary li a {
+		    padding: 10px 0;
 		    display: block;
 		    width: 100%;
 		    text-transform: uppercase;
@@ -263,20 +264,24 @@ body {
 		    font-size: 11px;
 		    color: #333;
 		    line-height: 17px;
+		    border-bottom: none;
 		    font-family: 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif;
 		}
-		.secondary li .text {
+		.main .secondary li .text {
 		    padding-left: 28px;
 		    display: block;
 		}
-		.secondary li.section,
-		.secondary li.current {
+		.main .secondary li.section,
+		.main .secondary li.current {
 		    background-color: #f7f7f7
 		}
-			.secondary li.section a,
-			.secondary li.current a {
+			.main .secondary li.section a,
+			.main .secondary li.current a {
 			    color: #000
 			}
+		.main .secondary h3 {
+			color: #aaa;
+		}
 
 
 /* MIXED */
@@ -625,6 +630,7 @@ body h1 span.amp {
 	}
 }
 
+/* Based on HTML5 boilerplate print styles */
 @media print { 
 	* {
 	    background: transparent !important;
@@ -634,14 +640,27 @@ body h1 span.amp {
 	    filter: none !important;
 	    -ms-filter: none !important;
 	}
-	.header,
-	.footer {
-	    display: none
-	}
 	a,
 	a:visited {
 	    text-decoration: underline
 	}
+	a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
 	thead {
 	    display: table-header-group
 	}
@@ -651,5 +670,30 @@ body h1 span.amp {
 	}
 	img {
 	    max-width: 100% !important
+	}
+	pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    @page {
+        margin: 0.5cm;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    /* Simple theme custom print styles */
+	.header,
+	.footer {
+	    display: none
 	}
 }

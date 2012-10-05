@@ -208,6 +208,11 @@ body {
   .typography .captionImage.right img {
     margin-left: -10px;
   }
+  .typography .captionImage.right p {
+    margin-left: -10px;
+    text-align: left;
+    margin-left: -10px;
+  }
 .typography .captionImage.leftAlone{
   float:none;
   margin: 0 20px 20px 0px;
