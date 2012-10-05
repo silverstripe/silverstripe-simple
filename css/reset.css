@@ -1,3 +1,6 @@
+/* This reset is loosely derived from HTML5 boilerplate 
+for more information visit http://html5boilerplate.com/ */
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
@@ -30,7 +33,7 @@ input[type="checkbox"], input.checkbox, .checkboxes input {vertical-align:bottom
 .ie6 input {vertical-align: text-bottom;}
 label, input[type="button"], input[type="submit"], input[type="image"], button, .btn {cursor:pointer;}
 button, input, select, textarea {margin:0;}
-.checkbox, .radio {float:left; width:13px; height:13px; margin-right:6px; padding:0;}
+/* .checkbox, .radio {float:left; width:13px; height:13px; margin-right:6px; padding:0;} */
 
 button {width:auto; overflow:visible;}
 .ie7 img {-ms-interpolation-mode: bicubic;}
