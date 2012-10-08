@@ -53,8 +53,8 @@ body {
 .typography h6 {
     font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
-    color: #b80000;
     margin-bottom: 10px;
+    color: #444;
 }
 .typography h1 { font-size: 36px; 
   line-height: 45px; 
@@ -95,9 +95,11 @@ body {
 .typography a.intro {
     color: #B80000;
     text-decoration: none;
-    border-bottom: 1px dashed #B80000;
 }
-  .typography a:hover { color: #D80000; }
+  .typography a:hover { 
+    color: #D80000;
+    border-bottom: 1px dashed #B80000;
+  }
   .typography a:focus { }
 
 
