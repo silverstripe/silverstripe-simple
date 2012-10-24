@@ -62,7 +62,7 @@ body {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 5px;
 }
-.typography h2 { font-size: 28px; line-height: 35px; margin-bottom: 15px; padding-top: 10px; }
+.typography h2 { font-size: 28px; line-height: 35px; margin-bottom: 15px; }
 .typography h3 { font-size: 22px; line-height: 30px; margin-bottom: 10px; }
 .typography h4 { font-size: 18px; line-height: 25px; margin-bottom: 5px; }
 .typography h5 { font-size: 16px; line-height: 20px; margin-bottom: 5px; }
@@ -241,7 +241,7 @@ body {
   margin: 0 0 20px;
   float: right;
   text-indent: 30px;
-  width: 45%;
+  width: 50%;
   margin-left: 5%;
   clear: both;
 }
@@ -256,4 +256,11 @@ body {
   margin: 0 0 20px 0;
   padding: 15px;
   clear: both;
+}
+
+/* ADDRESS
+-------------------------------------------- */
+address {
+  display: block;
+  margin-bottom: 20px;
 }

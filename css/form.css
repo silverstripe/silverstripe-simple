@@ -212,6 +212,14 @@ form .optionset ul {
         margin-bottom: 5px;
         list-style-type:none;
     }
+    form div.checkbox:after { 
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    form .checkbox .checkbox { clear: both; }
 
 /* Messages */
 span.message {
