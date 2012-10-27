@@ -1,4 +1,4 @@
-<% if Level(2) %>
+<% if $Level(2) %>
 	<div id="Breadcrumbs">
 	   	$Breadcrumbs
 	</div>

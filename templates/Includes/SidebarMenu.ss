@@ -1,16 +1,16 @@
-<!--Include SidebarMenu recursively /-->
-<% if Children %>	
-	<% loop Children %>	
+<%--Include SidebarMenu recursively --%>
+<% if $Children %>
+	<% loop $Children %>
 		<li class="$LinkingMode">
 			<a href="$Link" class="$LinkingMode" title="Go to the $Title.XML page">
 				<span class="arrow">&rarr;</span>
 				<span class="text">$MenuTitle.XML</span>
 			</a>
 
-			<% if Children %>
-				<ul>	
+			<% if $Children %>
+				<ul>
 					<% include SidebarMenu %>
-				</ul>	
+				</ul>
 			<% end_if %>
 
 		</li>
