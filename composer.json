@@ -12,6 +12,6 @@
     ],
     "require": {
         "composer/installers": "*",
-        "silverstripe/framework": ">=3.0.x-dev,<=dev-master"
+        "silverstripe/framework": ">=3.0"
     }
 }
