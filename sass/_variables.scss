@@ -2,29 +2,37 @@
 
 /* COLORS */
 
-$white:                 #ffffff;
-$offWhite:              #f7f7f7;
+$white:                   #ffffff;
+$offWhite:                #f7f7f7;
 
-$grayLighter:           #e5e5e5;
-$grayLight:             #d4d4d4;
-$gray:                  #888888;
-$grayDark:              #444444;
-$grayDarker:            #333333;
+$grayLighter:             #e5e5e5;
+$grayLight:               #d4d4d4;
+$gray:                    #888888;
+$grayDark:                #444444;
+$grayDarker:              #333333;
 
+$messageBackgroundColor:  #fef4ba;
+$messageColor:            #e8c805;
 
-$baseFontColor:         $grayDarker;
-$linkColor:             #b80000;
-$linkColorHover:        #d80000;
+$goodBackgroundColor:     #ecf9d0;
+$goodColor:               #8fbe00;
+
+$requiredBackgroundColor: #f9d0d0;
+$requiredColor:           #cf0000;
+
+$baseFontColor:           $grayDarker;
+$linkColor:               #b80000;
+$linkColorHover:          #d80000;
 
 /* FONTS */
 
-$baseFontSize:          13px;
-$baseFontFamily:        Arial, Helvetica, sans-serif;
-$serifFontFamily:       "CamboRegular", Georgia, "Times New Roman", Times, serif;
+$baseFontSize:            13px;
+$baseFontFamily:          Arial, Helvetica, sans-serif;
+$serifFontFamily:         "CamboRegular", Georgia, "Times New Roman", Times, serif;
 
-$baseLineHeight:        1.3em;
+$baseLineHeight:          1.3em;
 
 /* GRID */
 
-$grid-y:                5px;
-$grid-x:                5px;
+$grid-y:                  5px;
+$grid-x:                  5px;

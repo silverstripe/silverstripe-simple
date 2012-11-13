@@ -14,7 +14,7 @@
 	@return round(($emval * strip-units($base)) * 1px);
 }
 
-@function rem-line-height ($emval) {
+@function rem-line-height($emval) {
 	// uses rem function and multiplies it by the baseline height to get the unrounded lineheight 
 	// it then devides that number by grid-y height - this is then rounded to the nearest whole number
 	// lastly this is multiplied by the grid-y height to get a nice even lineheight value that is a 

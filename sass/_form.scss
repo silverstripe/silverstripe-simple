@@ -5,168 +5,190 @@
  *
  ** ------------------------------------------------------- */
 
+/** ------------------------------------------------------
+* This theme contains a SASS function that mimics the behaviour of rem units for font-size and line-height
+* It works off a $baseFontSize and $baseLineHeight set in the variables file. For Font-Sizes just add your rem value like this rem(<your rem value>);
+* and for Line-heights just add your rem value like this rem-line-height(<the rem value of the adjacent font-size>);
+* -------------------------------------------------------- */
+
+@import 'variables';
+@import 'functions';
 
 /* GENERIC FORMS
 ----------------------------------------------- */
 
 form {
-    max-width: 500px;
-    width: 50%;
+	max-width: 500px;
+	width: 50%;
+	label {
+		margin-bottom: $grid-y;
+		&.left {
+			display: block;
+			font-weight: bold;
+		}
+		&.right {
+			font-size: rem(0.9);
+			color: $gray;
+		}
+	}
+
+	input.text,
+	textarea,
+	.textajaxuniquetext,   /* Not sure if this is used? */
+	select {
+		width: 100%;
+		max-width: 400px;
+		padding: $grid-y $grid-x;
+		font-size: rem(1.15);
+		background-color: $white;
+		border: 1px solid $grayLight;
+		&:focus {
+			outline:none;
+		}
+	}
+	select {
+		.ie7 & {
+			width: 400px;
+		}
+	}
+	input,
+	textarea {
+		&[disabled] {
+			background-color: $offWhite;
+			border: 1px solid $grayLight;
+		}
+	}
+	textarea {
+		resize: vertical;
+	}
 }
+
 div.field {
-    margin: 10px 0 15px;
+	margin: $grid-y*2 0 $grid-y*3;
 }
+
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
-form label {
-    margin-bottom: 5px;
-}
-    form label.left {
-        display: block;
-        font-weight: bold;
-    }
-    form label.right {
-        font-size: 12px;
-        color: #888;
-    }
-
-form input.text,
-form textarea,
-form .textajaxuniquetext,   /* Not sure if this is used? */
-form select {
-    width: 100%;
-    max-width: 400px;
-    padding: 6px 5px;
-    font-size: 15px;
-    background-color: #fff;
-    border: 1px solid #dad9d9;
-}
-    .ie7 form select { width: 400px; }
-
-form input.text:focus,
-form textarea:focus,
-form .textajaxuniquetext:focus,
-form select:focus {
-    outline:none;
-}
-form input[disabled], form textarea[disabled] {
-    background-color: #f7f7f7;
-    border: 1px solid #dad9d9;
-}
-textarea {
-    resize: vertical;
-}
-
 
 /* Radio and Checkbox */
-.field .checkbox, .field .radio {
-    float: left; 
-    width: 13px; 
-    height: 13px; 
-    margin-right: 6px; 
-    margin-top: 3px;
-    padding: 0;
+.field {
+	.checkbox,
+	.radio {
+		float: left;
+		width: 13px;
+		height: 13px;
+		margin-right: 6px;
+		margin-top: 3px;
+		padding: 0;
+		label.right {
+			float: left;
+		}
+	}
 }
-    .checkbox label.right,
-    .radio label.right {
-        float: left;
-    }
-
 
 /* Messages */
-form .message {
-    background-color: #fef4ba;
-    padding: 5px 10px;
-    border: 1px solid #e8c805;
-    border-radius: 3px;
+form {
+	.message {
+		background-color: $messageBackgroundColor;
+		padding: $grid-y $grid-x*2;
+		border: 1px solid $messageColor;
+		border-radius: 3px;
+	}
+	.good {
+		background-color: $goodBackgroundColor;
+		border-color: $goodColor;
+	}
+	.bad, .required {
+		background-color: $requiredBackgroundColor;
+		border-color: $requiredColor;
+		color: $linkColor;
+	}
 }
-    form .good {
-        background-color: #ecf9d0;
-        border-color: #8fbe00;
-    }
-    form .bad, form .required {
-        background-color: #f9d0d0;
-        border-color: #cf0000;
-        color: #b80000;
-    }
-
 
 /* ACTIONS */
 .Actions {
-    margin-bottom: 20px;
+	margin-bottom: $grid-y*4;
+	&:after {
+		color: lighten($linkColor, 10%);
+		content: "* Indicates a required field";
+		display: inline-block;
+		font-weight: normal;
+		margin-top: 9px;
+	}
 }
-    a.btn, button, input[type="submit"], .Actions .action {
-        background: #b80000;
-        color: #fff;
-        display: inline-block;
-        border-radius: 4px;
-        padding: 6px 15px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: none;
-        font-size: 13px;
-        margin-right: 10px;
-        float: left;
-    }
-    a.btn:hover, button, input[type="submit"]:hover, .Actions .action:hover {
-        background: #C80000;
-        color: #fff;
-    }
-    a.btn {
-        line-height: 18px;
-        margin-bottom: 10px;
-    }
-    a.btn:after {                     /* creates arrow in button */
-        content: '\2192';
-        padding-left: 10px;
-    }
-    .ie7 input.action {
-        width: 0;                     /* IE table-cell margin fix */
-        overflow: visible;
-    }
-    input.action[class] {             /* IE ignores [class] */
-        width: auto;                  /* cancel margin fix for other browsers */
-    }
+a.btn, 
+button, 
+input[type="submit"], 
+.Actions .action {
+	background: $linkColor;
+	color: $white;
+	display: inline-block;
+	border-radius: 4px;
+	padding: $grid-y $grid-x*3;
+	margin-top: $grid-y*2;
+	margin-bottom: $grid-y*2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border: none;
+	font-size: $baseFontSize;
+	margin-right: $grid-x*2;
+	float: left;
+	&:hover {
+		background: darken($linkColor, 5%);
+		color: $white;
+	}
+}
 
-    .ie7 .Actions .action {
-        float: left;
-    }
-    .Actions:after {
-        color: #B94A48;
-        content: "* Indicates a required field";
-        display: inline-block;
-        font-weight: normal;
-        margin-top: 9px;
-    }
-    #MemberLoginForm_LoginForm .Actions:after {
-        display: none;
-    }
+a.btn {
+	line-height: rem-line-height(1);
+	margin-bottom: $grid-y*2;
+	&:after {                     /* creates arrow in button */
+		content: '\2192';
+		padding-left: $grid-x*2;
+	}
+}
+
+.ie7 {
+	input.action {
+		width: 0;                     /* IE table-cell margin fix */
+		overflow: visible;
+	}
+	.Actions .action {
+		float: left;
+	}
+}
+
+input.action[class] {             /* IE ignores [class] */
+	width: auto;                  /* cancel margin fix for other browsers */
+}
+
+
+#MemberLoginForm_LoginForm .Actions:after {
+	display: none;
+}
 
 
 /* AREA SPECIFIC */
     /* LOGIN and FORGOT PASSWORD */
-    #Remember {
-        min-height: 20px;
-    }
-    #ForgotPassword {
-        clear: left;
-    }
-    #MemberLoginForm_LostPasswordForm .Actions:after {
-        display: none;
-    }
 
-    /* Search / Login */
-    .header form .middleColumn {
-        /* float: none;
-        width: 100% !important; */
-    }
+#Remember {
+	min-height: $grid-y*4;
+}
+#ForgotPassword {
+	clear: left;
+}
+#MemberLoginForm_LostPasswordForm .Actions:after {
+	display: none;
+}
 
-
+/* Search / Login */
+.header form .middleColumn {
+	/* float: none;
+	width: 100% !important; */
+}
 
 
 /* USER DEFINED USER FORM MODULE STYLES
@@ -174,121 +196,134 @@ form .message {
 
 /*Generic and mixed*/
 .FormHeading {
-    clear: both;
-    padding-top: 15px;
+	clear: both;
+	padding-top: $grid-y*3;
 }
 form .date .middleColumn input {
-    /*background: transparent url(../images/icons/your_icon_here.png) no-repeat scroll 90px 5px;*/
-    width: 114px;
+	/*background: transparent url(../images/icons/your_icon_here.png) no-repeat scroll 90px 5px;*/
+	width: 114px;
 }
-.Actions input.resetformaction {                  /* Clear button */
-    float: left;
-    background-color: #888;
-}
-.Actions input.resetformaction:hover {            /* Clear button */
-    background-color: #aaa;
+
+.Actions {
+	input {
+		&.resetformaction {                  /* Clear button */
+			float: left;
+			background-color: $gray;
+		}
+		&.resetformaction:hover {            /* Clear button */
+			background-color: lighten($gray, 5%);
+		}
+	}
 }
 
 /* Labels */
 .checkbox label.right {
-    font-size: 13px;                            /* reset to default */
-    color: #333;                                /* reset to default */
+	font-size: $baseFontSize;                          /* reset to default */
+	color: $grayDarker;                                /* reset to default */
 }
 form .requiredField label.left:after {
-    color: #B94A48;
-    content: "*";
-    font-size: 14px;
-    font-weight: normal;
-    padding-left: 3px;
+	color: lighten($linkColor, 10%);
+	content: "*";
+	font-size: rem(1.1);
+	font-weight: normal;
+	padding-left: 3px;
 }
 
 /* Radio / Checkbox */
-form .checkboxset ul,
-form .optionset ul {
-    margin: 0;
+form {
+	.checkboxset ul,
+	.optionset ul {
+		margin: 0;
+	}
+	.checkboxset li,
+	.optionset li {
+		margin-bottom: $grid-y;
+		list-style-type:none;
+	}
+	div.checkbox:after { 
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.checkbox .checkbox {
+		clear: both;
+	}
 }
-    form .checkboxset li,
-    form .optionset li {
-        margin-bottom: 5px;
-        list-style-type:none;
-    }
-    form div.checkbox:after { 
-        content: ".";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
-    form .checkbox .checkbox { clear: both; }
 
 /* Messages */
+
 span.message {
-    margin: 10px 0;
-    display: block;
-    max-width: 390px;
-    clear: left;
+	margin: $grid-y*2 0;
+	display: block;
+	max-width: 390px;
+	clear: left;
 }
+
 div.holder-required {               /* This class needs to be changed - is used for both input and div */
-    /* background-color: #f9d0d0;
-    border: 1px solid #cf0000;
-    padding: 10px;
-    margin-left: -11px; */
+	/* background-color: #f9d0d0;
+	border: 1px solid #cf0000;
+	padding: 10px;
+	margin-left: -11px; */
 }
+
 form input.holder-required {        /* This class needs to be changed - is used for both input and div */
-    border: 1px solid #cf0000; 
+	border: 1px solid $requiredColor; 
 }
 
 /* Error messages */
+
 input:invalid,
 textarea:invalid {
-    border-radius: 1px;
-    -moz-box-shadow: 0px 0px 5px red;
-    -webkit-box-shadow: 0px 0px 5px red;
-    box-shadow: 0px 0px 5px red;
-}
-.no-boxshadow input:invalid,
-.no-boxshadow textarea:invalid {
-    background-color: #f0dddd
+	border-radius: 1px;
+	-moz-box-shadow: 0px 0px 5px red;
+	-webkit-box-shadow: 0px 0px 5px red;
+	box-shadow: 0px 0px 5px red;
+	.no-boxshadow & {
+		background-color: lighten($linkColor, 60%);
+	}
 }
 
 /* To test - potentially not needed? */
+
 .ss-uploadfield-item-info button{
-    margin-top: 4px !important;
-    float: left;
+	margin-top: 4px !important;
+	float: left;
 }
-form .creditCardField input,
-form input.currency,
-form input.numeric {
-    width: 50px;
+form {
+	.creditCardField input,
+	input.currency,
+	input.numeric {
+		width: 50px;
+	}
+	#DMYDate-month,
+	#DMYDate-day {
+		width: 25px
+	}
 }
-form #DMYDate-month,
-form #DMYDate-day {
-    width: 25px
-}
-
-
-
 
 /* Responsive form styles
 ----------------------------------------------- */
 
 @media only screen and (max-width: 700px) { 
 
-    /* To test - potentially not needed? */
+	/* To test - potentially not needed? */
 	.header form .middleColumn {
-	    float: none;
-	    width: 100% !important;
+		float: none;
+		width: 100% !important;
 	}
+	
 	form label.left,
 	#MemberLoginForm_LoginForm label {
-	    margin-bottom: 8px
+		margin-bottom: 8px
 	}
 }
 
 @media only screen and (max-width: 900px) { 
-    form {
-        max-width: 100%;
-    }
+	form {
+		max-width: 100%;
+	}
 }
 
 @media only screen and (min-width: 700px) { 
