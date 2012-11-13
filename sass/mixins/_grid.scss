@@ -1,0 +1,6 @@
+@mixin colSpan($columnSpan){
+	// this is the same as adding span11 to the markup.
+	@extend .span#{$columnSpan};
+	@extend [class*="span"]; // needs this in order for span function to correctly render.
+	float:left;
+}

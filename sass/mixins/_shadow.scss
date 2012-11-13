@@ -1,0 +1,33 @@
+@mixin doubleTextShadow($colorShadowTop, $colorShadowBottom){
+	-webkit-text-shadow: 0px -1px 0px $colorShadowTop, 0px 1px 0px $colorShadowBottom;
+	-moz-text-shadow: 0px -1px 0px $colorShadowTop, 0px 1px 0px $colorShadowBottom;
+	-o-text-shadow: 0px -1px 0px $colorShadowTop, 0px 1px 0px $colorShadowBottom;
+	text-shadow: 0px -1px 0px $colorShadowTop, 0px 1px 0px $colorShadowBottom;
+}
+
+@mixin textShadow($shadowColor){
+	-webkit-text-shadow: 1px 1px 0px $shadowColor;
+	-moz-text-shadow: 1px 1px 0px $shadowColor;
+	-o-text-shadow: 1px 1px 0px $shadowColor;
+	text-shadow: 1px 1px 0px $shadowColor;
+}
+
+//Mixin to create a regular box shadow
+@mixin boxShadow($horizontal, $vertical, $blur, $spread, $color){
+	-webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+	-moz-box-shadow: $horizontal $vertical $blur $spread $color;
+	box-shadow: $horizontal $vertical $blur $spread $color;
+}
+
+//Mixin to create an inset box shadow
+@mixin boxShadowInset($horizontal, $vertical, $blur, $spread, $color){
+	-webkit-box-shadow: inset $horizontal $vertical $blur $spread $color;
+	-moz-box-shadow: inset $horizontal $vertical $blur $spread $color;
+	box-shadow: inset $horizontal $vertical $blur $spread $color;
+}
+
+@mixin noShadow{
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}

@@ -1,0 +1,21 @@
+
+/* Fix for responsive images - use on IMG tag */
+@mixin flexImage {
+	max-width: 100%;
+	/* just in case, to force correct aspet ratio */
+	height: auto !important;
+	/* IE7 support - use this to make sure the images survive the scale-down */
+	-ms-interpolation-mode: bicubic;
+}
+
+/* Mobile icons for retina display */
+@mixin at2x($image_name, $repeat: no-repeat, $positionX: left, $positionY: top, $w: auto, $h: auto, $extention: '.png') {
+	background-image: url("../imgs/" + $image_name + $extention); //sets image url
+	background-position: $positionX, $positionY; //sets image position
+	background-repeat: $repeat; //sets background repeat
+	$x2img : $image_name + '@2x' + $extention;
+	@media all and (-webkit-min-device-pixel-ratio : 1.5) { //sets the width and height for the retina image
+		background-image: url("../imgs/retina/" + $x2img);
+		background-size: $w $h;
+	}
+}

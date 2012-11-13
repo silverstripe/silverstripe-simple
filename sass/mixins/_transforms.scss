@@ -1,0 +1,23 @@
+
+@mixin rotate($deg){
+	-webkit-transform:rotate($deg);
+	-moz-transform:rotate($deg);
+	-ms-transform:rotate($deg);
+	-o-transform:rotate($deg);
+	transform:rotate($deg);
+}
+
+/* 45 degree rotation to work on IE*/
+@mixin rotate45{
+	-webkit-transform: rotate(45deg);  /* Saf3.1+, Chrome */
+	-moz-transform: rotate(45deg);  /* FF3.5+ */
+	-ms-transform: rotate(45deg);  /* IE9 */
+	-o-transform: rotate(45deg);  /* Opera 10.5 */
+	transform: rotate(45deg);
+	filter:progid:DXImageTransform.Microsoft.Matrix(/* IE6–IE9 actually 48degrees to deal with some intersting filter side effects*/
+		M11=0.6691306063588582, M12=-0.7431448254773941, M21=0.7431448254773941, M22=0.6691306063588582, sizingMethod='auto expand');
+	zoom: 1;
+	#IE9 &{
+		filter:none;
+	}
+}

@@ -1,0 +1,8 @@
+@mixin placeholderColor($color) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		color: $color;
+	}
+}

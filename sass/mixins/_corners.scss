@@ -1,0 +1,36 @@
+
+//Mixin to create rounded corners. Takes a value for each of the 4 corners
+@mixin roundCorners($topLeft, $topRight, $bottomRight, $bottomLeft){
+	-moz-border-radius-topleft: $topLeft;
+	-moz-border-radius-topright: $topRight;
+	-moz-border-radius-bottomright: $bottomRight;
+	-moz-border-radius-bottomleft: $bottomLeft;
+	-webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+	border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+
+/* keeps background from busting out of border */
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+@mixin borderRadius($r){
+	@include roundCorners($r, $r, $r, $r);
+}
+
+@mixin topCorners($r){
+	@include roundCorners($r, $r, 0, 0);
+}
+
+@mixin bottomCorners($r){
+	@include roundCorners(0, 0, $r, $r);
+}
+
+@mixin leftCorners($r){
+	@include roundCorners($r, 0, 0, $r);
+}
+
+@mixin rightCorners($r){
+	@include roundCorners(0, $r, $r, 0);
+}
+

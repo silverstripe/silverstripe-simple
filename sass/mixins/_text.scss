@@ -1,0 +1,13 @@
+
+@mixin textOverflow {
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	overflow:hidden;
+	-moz-binding: url(css/ellipsis.xml#ellipsis);
+}
+
+@mixin textReplacement {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}

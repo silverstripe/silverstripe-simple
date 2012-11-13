@@ -1,0 +1,90 @@
+
+@mixin delay($time, $webkit:true){
+	@if($webkit){
+		-webkit-transition-delay: $time;
+	}
+	-moz-transition-delay: $time;
+	-o-transition-delay: $time;
+	transition-delay: $time;
+}
+
+@mixin duration($time, $webkit:true){
+	@if($webkit){
+		-webkit-transition-duration: $time;
+	}
+	-moz-transition-duration: $time;
+	-o-transition-duration: $time;
+	transition-duration: $time;
+}
+
+// A collection of animation mixins
+// so far just has grow or fade (and the calls are commented out), but can be extended by:
+// 1. adding a rule to keyframeSettings, and
+// 2. calling the keyframes mixin below to generate the keyframes
+//
+// Note: keyframes will not work if called from inside selectors,
+// so they are called from this mixin file. They are commented out by default.
+// Uncomment to use these mixins
+@mixin keyframeSettings($name){
+	@if($name == "grow") {
+		0% {
+			right:-10px;
+		}
+		100% {
+			right:0px;
+		}
+	} @else if($name == "fade") {
+		0% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	} @else {
+		0% {
+			right:-10px;
+		}
+		100% {
+			right:0px;
+		}
+	}
+}
+
+@mixin keyframes($name){
+//Animation keyframes. Must be generated outside any selectors
+	@-webkit-keyframes $name {
+		@include keyframeSettings($name);
+	}
+	@-moz-keyframes $name {
+		@include keyframeSettings($name);
+	}
+	@-ms-keyframes $name {
+		@include keyframeSettings($name);
+	}
+	@-o-keyframes $name {
+		@include keyframeSettings($name);
+	}
+	@keyframes $name {
+		@include keyframeSettings($name);
+	}
+}
+
+// This is the mixin you should call fromwithin your selector to apply animation effects
+// $effect needs a corrosponding keyframe, such as grow or fade,
+// with corrosponding keyframeSettings. Called below this mixin
+// eg @include keyframes(grow);
+@mixin animateEffect($effect) {
+	-moz-animation-fill-mode: both;
+	-ms-animation-fill-mode: both;
+	-o-animation-fill-mode: both;
+	-webkit-animation:$effect 0.2s linear both; //webkit supports this short-hand, moz doesn't yet
+	-moz-animation:$effect 0.2s linear;
+	-ms-animation:$effect 0.2s linear;
+	-o-animation:$effect 0.2s linear;
+	animation:$effect 0.2s linear both;
+}
+
+/// Comment these in to you use the keyframes
+// @include keyframes(grow);
+// @include keyframes(fade);
+

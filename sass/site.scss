@@ -1,0 +1,25 @@
+/* This file imports all the relevant files for regular screen display
+ *
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/yourprojectname.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ */
+
+// reset styles
+@import 'reset';
+
+// Base variables
+@import 'variables';
+
+@import 'functions';
+
+// typography
+@import 'typography';
+
+// Our main screen styles
+@import 'layout';
+
+// Our main form styles
+@import 'form';
+
+//Navigation
+@import 'navigation';

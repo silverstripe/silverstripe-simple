@@ -1,0 +1,53 @@
+
+/* Use on floated elements - :after creates the equivalent of <div class="clear"></div> below the floated element */
+@mixin clearFix(){
+	&:before,
+	&:after {
+		content:"";
+		display:table;
+	}
+	&:after {
+		clear:both;
+	}
+	zoom:1; /* For IE 6/7 (trigger hasLayout) */
+	.ie7 &, .ie8 & {
+		width:100%
+	}
+	.ie7 & {
+		height:1px;
+	}
+}
+
+@mixin borderBox {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+
+//Aligns content as vertically centered
+@mixin verticalAlign{
+	display: table;
+	.ie7 &{
+		position: relative;
+	}
+	.center{
+		.ie7 &{
+			position: absolute;
+			top: 50%;
+		}
+		display: table-cell;
+		vertical-align: middle;
+		.ie7 & h2.verticalContent {
+			width: 204px;
+			text-align: center;
+		}
+		.verticalContent{
+			.ie7 &{
+				margin:0;
+				padding:0;
+				position: relative;
+				top: -50%;
+			}
+		}
+	}
+}//end mixin

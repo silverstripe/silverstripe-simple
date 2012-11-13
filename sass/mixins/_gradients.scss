@@ -1,0 +1,42 @@
+@import "compass"; //for IE9 SVG gradient support
+
+@mixin topGradient($topColor, $bottomColor){
+	background: $topColor; /* Old browszzzzzers */
+	background: -moz-linear-gradient(top, $topColor 0%, $bottomColor 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$topColor), color-stop(100%,$bottomColor)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $topColor 0%,$bottomColor 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $topColor 0%,$bottomColor 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, $topColor 0%,$bottomColor 100%); /* IE10+ */
+	background: linear-gradient(top, $topColor 0%,$bottomColor 100%); /* W3C */
+	#IE &{
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$topColor}', endColorstr='#{$bottomColor}',GradientType=0 ); /* IE6-9 */
+	}
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(top, $topColor,$bottomColor));
+}
+
+@mixin leftGradient($leftColor, $rightColor){
+	background: $leftColor; /* Old browszzzzzers */
+	background: -moz-linear-gradient(left, $leftColor 0%, $rightColor 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$leftColor), color-stop(100%,$rightColor)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, $leftColor 0%,$rightColor 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, $leftColor 0%,$rightColor 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(left, $leftColor 0%,$rightColor 100%); /* IE10+ */
+	background: linear-gradient(left, $leftColor 0%,$rightColor 100%); /* W3C */
+	#IE &{
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$leftColor}', endColorstr='#{$rightColor}',GradientType=1 ); /* IE6-9 */
+	}
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(left, $leftColor,$rightColor));
+}
+
+@mixin gradientPosition($topColor, $topPos, $bottomColor, $bottomPos){
+	background: $topColor; /* Old browsers */
+	background: -moz-linear-gradient(top,  $topColor $topPos, $bottomColor $bottomPos); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($topPos,$topColor), color-stop($bottomPos,$bottomColor)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $topColor $topPos,$bottomColor $bottomPos); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $topColor $topPos,$bottomColor $bottomPos); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $topColor $topPos,$bottomColor $bottomPos); /* IE10+ */
+	background: linear-gradient(to bottom,  $topColor $topPos,$bottomColor $bottomPos); /* W3C */
+//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$topColor}', endColorstr='#{$bottomPos}',GradientType=0 ); /* IE6-9 */
+}

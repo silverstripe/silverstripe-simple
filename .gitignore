@@ -1,2 +1,5 @@
 webfonts/.DS_Store
 images/.DS_Store
+.sass-cache
+css/.DS_Store
+plugins/.DS_Store

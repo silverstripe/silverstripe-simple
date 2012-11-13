@@ -1,0 +1,8 @@
+--- 
+lock: false
+repository_class: Piston::Git::Repository
+format: 1
+repository_url: git://github.com/chriseppstein/sass-globbing.git
+handler: 
+  branch: master
+  commit: 06e36524c7b4dad3d150f62c72e625aeebefb03a
