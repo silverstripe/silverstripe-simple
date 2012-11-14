@@ -20,7 +20,6 @@ body {
 	background: $offWhite;
 	min-width: 240px;
 	-webkit-text-size-adjust: none;
-	font-size: $baseFontSize;
 	.ie7 &, .ie8 & {
 		min-width: 860px;
 	}

@@ -44,7 +44,7 @@
 /* BASE TYPOGRAPHY */
 body {
 	font-size: $baseFontSize;
-	line-height: $baseLineHeight;
+	line-height: rem-line-height(1);
 	margin-bottom: $baseLineHeight;
 	color: $baseFontColor;
 	font-family: $baseFontFamily;

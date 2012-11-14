@@ -113,7 +113,7 @@ strong, th { font-weight: bold; }
 @font-face { font-family: 'WebSymbolsRegular'; src: url("../webfonts/websymbols-regular-webfont.eot"); src: url("../webfonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../webfonts/websymbols-regular-webfont.woff") format("woff"), url("../webfonts/websymbols-regular-webfont.ttf") format("truetype"), url("../webfonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg"); font-weight: normal; font-style: normal; }
 
 /* BASE TYPOGRAPHY */
-body { font-size: 13px; line-height: 1.3rem; margin-bottom: 1.3rem; color: #333333; font-family: Arial, Helvetica, sans-serif; }
+body { font-size: 13px; line-height: 15px; margin-bottom: 1.3rem; color: #333333; font-family: Arial, Helvetica, sans-serif; }
 body a { text-decoration: none; }
 body a:link { -webkit-tap-highlight-color: #b80000; }
 
@@ -204,7 +204,7 @@ address { display: block; margin-bottom: 20px; }
 /* GRID */
 /* FUNCTIONS */
 /* MAIN LAYOUT */
-body { margin: 0; background: #f7f7f7; min-width: 240px; -webkit-text-size-adjust: none; font-size: 13px; }
+body { margin: 0; background: #f7f7f7; min-width: 240px; -webkit-text-size-adjust: none; }
 .ie7 body, .ie8 body { min-width: 860px; }
 
 .main { background: white; padding: 40px 0 60px; min-height: 300px; }
