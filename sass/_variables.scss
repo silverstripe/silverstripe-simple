@@ -29,8 +29,8 @@ $headerColor:             #161616;
 
 /* FONTS */
 
-$baseFontSize:            13px;
-$baseLineHeight:          1.3em;
+$baseFontSize:            13px; //must be set in pixels
+$baseLineHeight:          1.3rem; //must be set in terms of rem (relative to the base font size)
 
 $baseFontFamily:          Arial, Helvetica, sans-serif;
 $sansFontFamily:          "HelveticaNeueLTPro-Bd", "Helvetica Neue LT Pro Bold", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue LT Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;

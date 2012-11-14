@@ -1,0 +1,156 @@
+/* HEADER */
+.header {
+	background: $headerColor;
+	.inner {
+		padding-top: $grid-y*9;
+		position: relative;
+		min-height: 72px;
+		
+		/* Brand */
+		.brand, .brand:hover {
+			float: left;
+			color: $white;
+			display: inline-block;
+		}
+		.brand {
+			h1 {
+				margin: 0;
+				padding: 0;
+				font-size: rem(3.7);
+				font-family: $sansFontFamily;
+				color: $white;
+				font-weight: 600;
+				font-stretch: normal;
+				line-height: rem(3.7); //set the lineheight to be the same as the font size. - not based on $baseLineHeight
+			}
+			p {
+				color: $gray;
+				margin: $grid-y*2 0 $grid-y*4;
+			}
+		}
+
+		/* Search form */
+		.search-bar {
+			position: absolute;
+			right: 28px;
+			top: 32px;
+			#Search {
+				margin: 0;
+				padding: 0;
+			}
+			form input {
+				&.text {
+					width: 155px;
+					padding: $grid-y 34px $grid-y $grid-x*3;
+					color: $gray;
+					margin: 0;
+					border: none;
+					border-radius: 14px;
+					background: $white;
+				}
+				&.action {
+					font-size: rem(1.1);
+					position: absolute;
+					right: $grid-x;
+					top: 0;
+					cursor: pointer;
+					border: none;
+					padding: $grid-y;
+					background: none;
+					font-family: $iconFont;
+					color: $gray;
+					border-radius: 0;
+					margin: 0;
+				}
+				&.active,
+				&.action:hover {
+					color: $black;
+				}
+			}
+		}
+		.search-dropdown-icon {
+			display: none
+		}
+	}
+	.search-bar form input:focus,
+	textarea:focus {
+		outline: none
+	}
+
+/* NAVIGATION */
+	
+	/* Primary navigation */
+	.primary ul {
+		//float: right; 
+		//margin:23px -12px 0 0;
+		position:absolute; 
+		bottom: 0; 
+		right:17px;
+		li {
+			float: left;
+			padding-bottom: $grid-y*3;
+			margin: 0 $grid-x;
+			position: relative;
+			white-space: nowrap;
+			a {
+				color: $gray;
+				font-size: rem(1.15);
+				font-family: $baseFontFamily;
+				padding: 6px 8px;
+				font-weight: bold;
+				display: block;
+				&:hover {
+				    color: $white;
+				}
+			}
+			&.section,
+			&.current {
+				a {
+					color: $white;
+				}
+				&:after {
+					content: '}';
+					display: block;
+					position: absolute;
+					left: 50%;
+					margin-left: -7px;
+					bottom: -7px;
+					font-family: $iconFont;
+					font-size: rem(2.3);
+					color: $white;
+					text-align: center;
+					line-height: rem(1.55); //needs to have a specific lineheight that is not based on $baseLineHeight
+				}
+			}
+		}
+	}
+}
+
+/* When navigation and logo overlap tablet-nav is initialized */
+
+.tablet-nav {
+	.header .inner {
+		padding-top: $grid-y*4;
+		.brand p {
+			margin-bottom: 0;
+		}
+		.primary ul {
+			float: left;
+			clear: both;
+			position: relative;
+			margin: 20px 0 0 -13px;
+			white-space: nowrap;
+			right: auto;
+			li {
+				white-space: nowrap;
+				a {
+					@include transition(none);
+				}
+			}
+		}
+	}
+	.footer .right {
+		float: left;
+		width: 100%;
+	}
+}

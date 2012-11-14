@@ -21,5 +21,14 @@
 // Our main form styles
 @import 'form';
 
-//Navigation
-@import 'navigation';
+// Header and Navigation
+@import 'header';
+
+// SubNavigation
+@import 'sidenav';
+
+// Footer
+@import 'footer';
+
+// Responsive Layout and Media
+@import 'media';

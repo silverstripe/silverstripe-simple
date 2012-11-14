@@ -1,0 +1,64 @@
+/* FOOTER */
+.footer {
+	color: lighten($gray, 5%);
+	background: lighten($grayLighter, 5%);
+	padding: $grid-y*4 0;
+	font-size: rem(0.85);
+	line-height: rem(1.7); //needs to have a specific lineheight that is not based on $baseLineHeight
+	a {
+		color: lighten($gray, 5%);
+		&:hover {
+			color: $linkColor;
+		}
+	}
+	.left {
+		float: left;
+		color: $black;
+		display: block;
+		margin-bottom: $grid-y*2;
+	}
+	.right {
+		float: right;
+		display: block;
+		margin-bottom: $grid-y*2;
+	}
+	span {
+		padding: 0 3px;
+		color: lighten($gray, 10%);
+	}
+	.primary,
+	.primary ul {
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+	.primary {
+		li {
+			display: inline;
+			.ie6 &, .ie7 & {
+				display: inline;
+				zoom: 1;
+				margin-right: $grid-x*2;
+			}
+			&:after {
+				padding: 0 3px 0 5px;
+				content: '/';
+				color: lighten($gray, 5%);
+			}
+			&:last-child:after {
+				content: '';
+			}
+		}
+		.nav-open-button {
+			display: none;
+		}
+		ul#nav .menu-bubble-arrow {
+			display: none;
+		}
+	}
+	.arrow {
+		padding: 0 8px 0 5px;
+		color: $linkColor;
+		font-size: $baseFontSize;
+	}
+}

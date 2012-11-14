@@ -1,0 +1,50 @@
+/* Search Results */	
+
+.typography .searchResults h1 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}	
+
+/* TODO: Test search results styles */
+
+.searchResults {
+	p.searchQuery {
+		margin-bottom: $grid-y*2;
+		font-size: rem(1.15);
+		font-weight: bold;
+	}
+	ul#SearchResults {
+		padding: 0;
+		margin-left: 0;
+		border-bottom: 1px solid $grayLighter;
+		li {
+			border-top: 1px solid $grayLighter;
+			padding: $grid-y*4 0;
+			list-style-type: none;
+		}
+		p {
+			margin-bottom: $grid-y*2;
+		}
+	}
+	#PageNumbers {
+		border-top: 1px solid $grayLighter;
+		padding-top: $grid-y*4;
+		a {
+			padding: 0 $grid-x;
+		}
+		p {
+			float: right
+		}
+		.pagination {
+			float: left
+		}
+		.next,
+		.prev {
+			font-size: rem(1.1);
+		}
+		.next { margin-left: 15px; }
+		.prev { margin-right: 15px; }
+	}
+}
+
