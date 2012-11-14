@@ -14,646 +14,688 @@
 @import 'functions';
 
 /* MAIN LAYOUT */
+
 body {
-    margin: 0;
-    background: #ededed;
-    min-width: 240px;
-    -webkit-text-size-adjust: none;
+	margin: 0;
+	background: $offWhite;
+	min-width: 240px;
+	-webkit-text-size-adjust: none;
+	font-size: $baseFontSize;
+	.ie7 &, .ie8 & {
+		min-width: 860px;
+	}
 }
-	.ie7 body,
-	.ie8 body {
-	    min-width: 860px
+
+.main {
+	background: $white;
+	padding: $grid-y*8 0 $grid-y*12;
+	min-height: 300px;
+}
+.inner {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 $grid-x*6;
+	.ie6 & {
+		width: 960px;
 	}
-	.main {
-	    background: #fff;
-	    padding: 40px 0 60px;
-	    min-height: 300px;
-	}
-	.inner {
-	    max-width: 1100px;
-	    margin: 0 auto;
-	    padding: 0 30px;
-	}
-	.ie6 .inner {
-	    width: 960px
-	}
+}
+.content-container {
+	float: right;
+	width: 73%;
+}
+
+.no-sidebar {
 	.content-container {
-	    float: right;
-	    width: 73%;
-	}
-	.no-sidebar .content-container {
-	    float: left;
-	    width:100%;
+		float: left;
+		width:100%;
 	}
 	aside {
-	    float: left;
-	    width: 23%;
-	    margin-top: 12px;
-	}
-	.no-sidebar aside {
 		display: none;
 	}
+}
+
+aside {
+	float: left;
+	width: 23%;
+	margin-top: 12px;
+}
+
 
 
 /* HEADER */
 .header {
-    background: #161616;
-}
-	.header .inner {
-	    padding-top: 45px;
-	    position: relative;
-	    min-height: 72px;
-	}
-
-	/* Brand */
-	header .brand, header .brand:hover {
-	    float: left;
-	    color: #fff;
-	    display: inline-block;
-	}
-		.brand h1 {
-		    margin: 0;
-		    padding: 0;
-		    font-size: 48px;
-		    font-family: "HelveticaNeueLTPro-Bd", "Helvetica Neue LT Pro Bold", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue LT Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		    color: #fff;
-		    font-weight: 600;
-		    font-stretch: normal;
-		    line-height: 1em;
+	background: $headerColor;
+	.inner {
+		padding-top: $grid-y*9;
+		position: relative;
+		min-height: 72px;
+		
+		/* Brand */
+		.brand, .brand:hover {
+			float: left;
+			color: $white;
+			display: inline-block;
 		}
-		.brand p {
-		    color: #888;
-		    margin-bottom: 22px;
-		}
-
-	/* Search form */
-	.search-bar {
-	    position: absolute;
-	    right: 28px;
-	    top: 32px;
-	}
-		.search-bar #Search {
-			margin: 0;
-			padding: 0;
-		}
-		.search-bar form input.text {
-		    width: 155px;
-		    padding: 5px 34px 5px 10px;
-		    color: #888;
-		    margin: 0;
-		    border: none;
-		    border-radius: 14px;
-		    background: #fff;
+		.brand {
+			h1 {
+				margin: 0;
+				padding: 0;
+				font-size: rem(3.7);
+				font-family: $sansFontFamily;
+				color: $white;
+				font-weight: 600;
+				font-stretch: normal;
+				line-height: rem(3.7); //set the lineheight to be the same as the font size. - not based on $baseLineHeight
+			}
+			p {
+				color: $gray;
+				margin: $grid-y*2 0 $grid-y*4;
+			}
 		}
 
-		.search-bar form input.action {
-		    font-size: 14px;
-		    position: absolute;
-		    right: 0;
-		    top: -1px;
-		    cursor: pointer;
-		    border: none;
-		    padding: 5px;
-		    background: none;
-		    font-family: 'WebSymbolsRegular';
-		    color: #848484;
-			border-radius: 0;
-			margin: 0;
-		}
-		.search-bar form input.active,
-		.search-bar form input.action:hover {
-		    color: #000
-		}
-		.search-bar form input:focus,
-		.header textarea:focus {
-		    outline: none
+		/* Search form */
+		.search-bar {
+			position: absolute;
+			right: 28px;
+			top: 32px;
+			#Search {
+				margin: 0;
+				padding: 0;
+			}
+			form input {
+				&.text {
+					width: 155px;
+					padding: 5px 34px 5px 10px;
+					color: $gray;
+					margin: 0;
+					border: none;
+					border-radius: 14px;
+					background: $white;
+				}
+				&.action {
+					font-size: rem(1.1);
+					position: absolute;
+					right: 0;
+					top: -1px;
+					cursor: pointer;
+					border: none;
+					padding: 5px;
+					background: none;
+					font-family: $iconFont;
+					color: $gray;
+					border-radius: 0;
+					margin: 0;
+				}
+				&.active,
+				&.action:hover {
+					color: $black;
+				}
+			}
 		}
 		.search-dropdown-icon {
-		    display: none
+			display: none
 		}
-
-
+	}
+	.search-bar form input:focus,
+	textarea:focus {
+		outline: none
+	}
 
 /* NAVIGATION */
-
+	
 	/* Primary navigation */
-	.header .primary ul {
-	    /*float: right; margin:23px -12px 0 0;*/ position:absolute; bottom:0; right:17px;
-	}
-	.header .primary li {
-	    float: left;
-	    padding-bottom: 14px;
-	    margin: 0 5px;
-	    position: relative;
-	    white-space: nowrap;
-	}
-	.header .primary li a {
-	    color: #888;
-	    font-size: 15px;
-	    font-family: Helvetica, Arial, sans-serif;
-	    padding: 6px 8px;
-	    font-weight: bold;
-	    display: block;
-	}
-	.header .primary li a:hover {
-	    color: #fff
-	}
-	.header .primary li.section a,
-	.header .primary li.current a {
-	    color: #fff
-	}
-	.header .primary li.section:after,
-	.header .primary li.current:after {
-	    content: '}';
-	    display: block;
-	    position: absolute;
-	    left: 50%;
-	    margin-left: -7px;
-	    bottom: -6px;
-	    font-family: 'WebSymbolsRegular';
-	    font-size: 30px;
-	    color: #fff;
-	    text-align: center;
-	    line-height: 20px;
-	}
-
-
-	/* When navigation and logo overlap tablet-nav is initialized */
-	.tablet-nav .brand p {
-	    margin-bottom: 0
-	}
-	.tablet-nav .header .inner {
-	    padding-top: 20px
-	}
-	.tablet-nav .header .primary ul {
-	    float: left;
-	    clear: both;
-	    position: relative;
-	    margin: 20px 0 0 -13px;
-	    white-space: nowrap;
-	    right: auto;
-	}
-		.tablet-nav .header .primary ul li {
-		    white-space: nowrap;
-		}
-			.tablet-nav .header .primary ul li a {
-			    -moz-transition: none;
-			    -webkit-transition: none;
-			    transition: none;
+	.primary ul {
+		//float: right; 
+		//margin:23px -12px 0 0;
+		position:absolute; 
+		bottom: 0; 
+		right:17px;
+		li {
+			float: left;
+			padding-bottom: $grid-y*3;
+			margin: 0 $grid-x;
+			position: relative;
+			white-space: nowrap;
+			a {
+				color: $gray;
+				font-size: rem(1.15);
+				font-family: $baseFontFamily;
+				padding: 6px 8px;
+				font-weight: bold;
+				display: block;
+				&:hover {
+				    color: $white;
+				}
 			}
-	.tablet-nav .footer .right {
-	    float: left;
-	    width: 100%;
-	}
-
-	/* Secondary navigation */
-	.main .secondary h3 {
-	    font-size: 20px;
-	    color: #b8b7b7;
-	    margin: 0 0 8px 0;
-	    font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
-	    font-weight: normal;
-	}
-	.main .secondary {
-	    border-bottom: 1px solid #e5e5e5
-	}
-		.main .secondary ul {
-		    padding: 0;
-		    margin: 0;
-		}
-		.main .secondary li {
-		    border-top: 1px solid #e5e5e5;
-		    position: relative;
-		    list-style-type: none;
-		    margin-bottom: 0;
-		}
-			.main .secondary li .arrow {
-			    color: #b80000;
-			    padding-right: 5px;
-			    display: block;
-			    font-size: 15px;
-			    line-height: 20px;
-			    position: absolute;
-			    left: 2px;
-			    top: 7px;
-			    -moz-transition: 0.2s;
-			    -webkit-transition: 0.2s;
-			    transition: 0.2s;
+			&.section,
+			&.current {
+				a {
+					color: $white;
+				}
+				&:after {
+					content: '}';
+					display: block;
+					position: absolute;
+					left: 50%;
+					margin-left: -7px;
+					bottom: -7px;
+					font-family: $iconFont;
+					font-size: rem(2.3);
+					color: $white;
+					text-align: center;
+					line-height: rem(1.55); //needs to have a specific lineheight that is not based on $baseLineHeight
+				}
 			}
-		.main .secondary li a:hover .arrow {
-		    left: 6px
 		}
-		.main .secondary li a {
-		    padding: 10px 0;
-		    display: block;
-		    text-transform: uppercase;
-		    letter-spacing: 2px;
-		    font-size: 11px;
-		    color: #333;
-		    line-height: 17px;
-		    border-bottom: none;
-		    font-family: 'Lucida Sans', 'Lucida Grande', Arial, Helvetica, sans-serif;
+	}
+}
+
+/* When navigation and logo overlap tablet-nav is initialized */
+
+.tablet-nav {
+	.header .inner {
+		padding-top: $grid-y*4;
+		.brand p {
+			margin-bottom: 0;
 		}
-		.main .secondary li .text {
-		    padding-left: 28px;
-		    display: block;
-		}
-		.main .secondary li.current a.current {
-			color: #b80000;
-		}
-		.main .secondary li.section,
-		.main .secondary li.current {
-		    background-color: #f1f1f1
-		}
-			.main .secondary li.section a,
-			.main .secondary li.current a {
-			    color: #000
+		.primary ul {
+			float: left;
+			clear: both;
+			position: relative;
+			margin: 20px 0 0 -13px;
+			white-space: nowrap;
+			right: auto;
+			li {
+				white-space: nowrap;
+				a {
+					@include transition(none);
+				}
 			}
-		.main .secondary h3 {
-			color: #aaa;
 		}
+	}
+	.footer .right {
+		float: left;
+		width: 100%;
+	}
+}
 
-		/* Secondary navigation 2-5 levels deep */
-		.main .secondary ul ul {					
-			display: none;
+/* Secondary navigation */
+.main {
+	.secondary {
+		border-bottom: 1px solid $grayLighter;
+		h3 {
+			font-size: rem(1.55);
+			line-height: rem-line-height(1.55);
+			color: lighten($gray, 10%);
+			margin: 0 0 8px 0;
+			font-family: $serifFontFamily;
+			font-weight: normal;
 		}
-		.secondary ul li.current ul,
-		.secondary ul li.section ul {				/* Only show child pages from selected parent */
-			display: block;
+		ul {
+			padding: 0;
+			margin: 0;
+			li {
+				border-top: 1px solid $grayLighter;
+				position: relative;
+				list-style-type: none;
+				margin-bottom: 0;
+				a {
+					padding: $grid-y*2 0;
+					display: block;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					font-size: rem(0.85);
+					line-height: rem(1.3); //needs to have a specific lineheight that is not based on $baseLineHeight
+					color: $grayDarker;
+					border-bottom: none;
+					font-family: $baseFontFamily;
+					.arrow {
+						color: $linkColor;
+						padding-right: $grid-x;
+						display: block;
+						font-size: rem(1.15);
+						line-height: rem-line-height(1.15);
+						position: absolute;
+						left: 2px;
+						top: 7px;
+						@include transition(0.2s);
+					}
+					&:hover {
+						.arrow {
+							left: 6px
+						}
+					}
+					.text {
+						padding-left: 28px;
+						display: block;
+					}
+				}
+				&.current a.current {
+					color: $linkColor;
+				}
+				&.section,
+				&.current {
+					background-color: $offWhite;
+					a {
+						color: $black;
+					}
+				}
+			}
 		}
-		.secondary li.current ul ul {				
-			display: none;
+		h3 {
+			color: lighten($gray, 10%);
 		}
-		.main .secondary ul ul li a { padding-left: 10px; }	/* Indent all sidebar navigation levels*/
-			.main .secondary ul ul li a .arrow { left: 12px; }
-			.main .secondary ul ul li a:hover .arrow { left: 16px; }
+	}
+}
 
-		.main .secondary ul ul ul li a { padding-left: 20px; }
-			.main .secondary ul ul ul li a .arrow { left: 22px; }
-			.main .secondary ul ul ul li a:hover .arrow { left: 26px; }
 
-		.main .secondary ul ul ul ul li a { padding-left: 30px; }
-			.main .secondary ul ul ul ul li a .arrow { left: 32px; }
-			.main .secondary ul ul ul ul li a:hover .arrow { left: 36px; }
-			
-		.main .secondary ul ul ul ul ul li a { padding-left: 40px; }
-			.main .secondary ul ul ul ul ul li a .arrow { left: 32px; }
-			.main .secondary ul ul ul ul ul li a:hover .arrow { left: 36px; }
-
-		.main .secondary li a:hover,
-		.main .secondary li.section a:hover,
-		.main .secondary li.current a:hover {
-			color: #b80000;
+/* Secondary navigation 2-5 levels deep */
+.main {
+	.secondary {
+		ul {
+			ul {
+				display: none;
+				li a { //Indent all sidebar navigation levels
+					padding-left: $grid-x*2;
+					.arrow { left: 12px; }
+					&:hover .arrow { left: 16px; }
+				}
+				ul li a {
+					padding-left: $grid-x*4;
+					.arrow { left: 22px; }
+					&:hover .arrow { left: 26px; }
+				}
+				ul ul li a {
+					padding-left: $grid-x*6;
+					.arrow { left: 32px; }
+					&:hover .arrow { left: 36px; }
+				}
+				ul ul ul li a {
+					padding-left: $grid-x*8;
+					.arrow { left: 32px; }
+					&:hover .arrow { left: 36px; }
+				}
+			}
+			li.current,
+			li.section {
+				ul {				/* Only show child pages from selected parent */
+					display: block;
+					ul {
+						display: none;
+					}
+				}
+			}
+			li a:hover,
+			li.section a:hover,
+			li.current a:hover {
+				color: $linkColor;
+			}
 		}
-
-
-
+	}
+}
 
 /* MIXED */
-header:after,
-.main:after,
-#Root:after,
-.search-bar:after,
-header .inner:after,
-footer:after {
-    height: 0;
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
+
+header,
+.main,
+#Root,
+.search-bar,
+header .inner,
+footer {
+	@include clearFix;
 }
+
 .search-bar form input.action,
 .header .primary li a,
 .footer a {
-    -moz-transition: color 0.2s;
-    -webkit-transition: color 0.2s;
-    transition: color 0.2s;
+	@include transition(color, 0.2s); //($type, $time)
 }
-.footer a.brand { color: #333; margin-left: 0; }
-.footer a.brand:hover { color: #B80000; }
+
+.footer a.brand {
+	color: $grayDarker; 
+	margin-left: 0;
+	&:hover {
+		color: $linkColor;
+	}
+}
+
 body h1 span.amp {
-    font-family: Baskerville,"Goudy Old Style","Palatino","Book Antiqua",Georgia;
-    font-style: italic;
+	font-family: $altSerifFontFamily;
+	font-style: italic;
 }
 
 
 /* PAGE SPECIFIC LAYOUT */
-	/* Homepage */
+/* Homepage */
 
-	/* Search Results */	
-	.typography .searchResults h1 {
-		margin-bottom: 0;
-		padding-bottom: 0;
-		border-bottom: none;
-	}								/* TODO: Test search results styles */
-	.searchResults p.searchQuery {
-	    margin-bottom: 10px;
-	    font-size: 15px;
-	    font-weight: bold;
-	}
-	.searchResults ul#SearchResults {
-	    padding: 0;
-	    margin-left: 0;
-	    border-bottom: 1px solid #e5e5e5;
-	}
-		.searchResults ul#SearchResults li {
-		    border-top: 1px solid #e5e5e5;
-		    padding: 20px 0;
-		    list-style-type: none;
-		}
-		.searchResults ul#SearchResults p {
-		    margin-bottom: 10px
-		}
-		.searchResults #PageNumbers {
-		    border-top: 1px solid #e5e5e5;
-		    padding-top: 20px;
-		}
-		.searchResults #PageNumbers a {
-		    padding: 0 5px
-		}
-		.searchResults #PageNumbers .pagination {
-		    float: left
-		}
-		.searchResults #PageNumbers p {
-		    float: right
-		}
-		.searchResults #PageNumbers .next,
-		.searchResults #PageNumbers .prev {
-		    font-size: 14px
-		}
-		.searchResults #PageNumbers .next {
-		    margin-left: 15px
-		}
-		.searchResults #PageNumbers .prev {
-		    margin-right: 15px
-		}
+/* Search Results */	
+.typography .searchResults h1 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}	
 
+/* TODO: Test search results styles */
+
+.searchResults {
+	p.searchQuery {
+		margin-bottom: $grid-y*2;
+		font-size: rem(1.15);
+		font-weight: bold;
+	}
+	ul#SearchResults {
+		padding: 0;
+		margin-left: 0;
+		border-bottom: 1px solid $grayLighter;
+		li {
+			border-top: 1px solid $grayLighter;
+			padding: $grid-y*4 0;
+			list-style-type: none;
+		}
+		p {
+			margin-bottom: $grid-y*2;
+		}
+	}
+	#PageNumbers {
+		border-top: 1px solid $grayLighter;
+		padding-top: $grid-y*4;
+		a {
+			padding: 0 $grid-x;
+		}
+		p {
+			float: right
+		}
+		.pagination {
+			float: left
+		}
+		.next,
+		.prev {
+			font-size: rem(1.1);
+		}
+		.next { margin-left: 15px; }
+		.prev { margin-right: 15px; }
+	}
+}
 
 /* FOOTER */
 .footer {
-    color: #999;
-    background: #ededed;
-    padding: 20px 0;
-    font-size: 11px;
-    line-height: 22px;
-}
-	.footer a {
-	    color: #999;
-	}
-	.footer a:hover {
-	    color: #B90000
-	}
-	.footer .left {
-	    float: left;
-	    color: #000;
-	    display: block;
-	    margin-bottom: 10px;
-	}
-	.footer .right {
-	    float: right;
-	    display: block;
-	    margin-bottom: 10px;
-	}
-	.footer span {
-	    padding: 0 3px;
-	    color: #bbb;
-	}
-	.footer .primary,
-	.footer .primary ul {
-	    display: inline;
-	    margin: 0;
-	    padding: 0;
-	}
-		.footer .primary li {
-		    display: inline
+	color: lighten($gray, 5%);
+	background: lighten($grayLighter, 5%);
+	padding: $grid-y*4 0;
+	font-size: rem(0.85);
+	line-height: rem(1.7); //needs to have a specific lineheight that is not based on $baseLineHeight
+	a {
+		color: lighten($gray, 5%);
+		&:hover {
+			color: $linkColor;
 		}
-	.ie6 .footer .primary li,
-	.ie7 .footer .primary li {
-	    display: inline;
-	    zoom: 1;
-	    margin-right: 10px;
 	}
-	.footer .primary li:after {
-	    padding: 0 3px 0 5px;
-	    content: '/';
-	    color: #999;
+	.left {
+		float: left;
+		color: $black;
+		display: block;
+		margin-bottom: $grid-y*2;
 	}
-	.footer .primary li:last-child:after {
-	    content: ''
+	.right {
+		float: right;
+		display: block;
+		margin-bottom: $grid-y*2;
 	}
-	.footer .arrow {
-	    padding: 0 8px 0 5px;
-	    color: #b80000;
-	    font-size: 13px;
+	span {
+		padding: 0 3px;
+		color: lighten($gray, 10%);
 	}
-	.footer .primary .nav-open-button {
-	    display: none;
+	.primary,
+	.primary ul {
+		display: inline;
+		margin: 0;
+		padding: 0;
 	}
-	.footer .primary ul#nav .menu-bubble-arrow {
-	    display: none;
+	.primary {
+		li {
+			display: inline;
+			.ie6 &, .ie7 & {
+				display: inline;
+				zoom: 1;
+				margin-right: $grid-x*2;
+			}
+			&:after {
+				padding: 0 3px 0 5px;
+				content: '/';
+				color: lighten($gray, 5%);
+			}
+			&:last-child:after {
+				content: '';
+			}
+		}
+		.nav-open-button {
+			display: none;
+		}
+		ul#nav .menu-bubble-arrow {
+			display: none;
+		}
 	}
-
-
+	.arrow {
+		padding: 0 8px 0 5px;
+		color: $linkColor;
+		font-size: $baseFontSize;
+	}
+}
 
 /* DEVICE & RESPONSIVE LAYOUT */
+
 .header .nav-open-button {
-    display: none
+	display: none
 }
 #media-query-trigger {
-    display: none;
-    visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
 
 @media only screen and (max-width: 960px) { 
 	.content img {
-	    max-width: 97%;
-	    height: auto;
+		max-width: 97%;
+		height: auto;
 	}
 	.header .primary ul {
-	    margin-left: -12px;
-	    -webkit-padding-start: 0px;
+		margin-left: -12px;
+		-webkit-padding-start: 0px;
 	}
 }
 
 /* when changing the breakpoint below, change it ito the same value in the script.js file as well */
 @media only screen and (max-width: 640px) { 
 	body {
-	    max-width: 640px
+		max-width: 640px
 	}
 	#media-query-trigger {
-	    visibility: visible
+		visibility: visible
 	}
-	.brand {
-	    float: none;
-	    display: inline-block;
-	    margin-left: 22px;
-	    margin-bottom: 22px;
-	}
-		.brand h1 {
-		    font-size: 40px
-		}
-		.brand h1 {
-		    padding-right: 80px
-		}
+
 	.header {
-	    padding: 0px
-	}
-		.header .inner {
-		    padding: 20px 0 0 0;
-		    min-height: 0;
+		padding: 0px;
+		.inner {
+			padding: 20px 0 0 0;
+			min-height: 0;
+			.brand {
+				float: none;
+				display: inline-block;
+				margin-left: 22px;
+				margin-bottom: 22px;
+				h1 {
+					font-size: rem(3.1);
+					padding-right: $grid-x*16;
+				}
+			}
 		}
-		.header .primary .nav-open-button {
-		    z-index: 100;
-		    width: 20px;
-		    height: 20px;
-		    position: absolute;
-		    right: 20px;
-		    top: 32px;
-		    display: block;
-		    cursor: pointer;
-		    font-family: 'WebSymbolsRegular';
-		    font-size: 20px;
-		    color: #ededed;
-		}
-		.header .primary ul {
-		    z-index: 10;
-		    position: relative;
-		    display: none;
-		    float: left;
-		    margin: 0 !important;
-		    padding: 0;
-		    white-space: normal;
-		    width: 100%;
-		}
-			.header .primary ul li {
-			    width: 100%;
-			    margin: 0 !important;
-			    float: none;
-			    background: none;
-			    position: relative;
-			    text-shadow: 0 1px #fff;
+		.primary {
+			.nav-open-button {
+				font-family: $iconFont;
+				font-size: rem(1.55);
+				color: $grayLighter;
+				z-index: 100;
+				width: rem(1.55); // needs to match font size
+				height: rem(1.55); // needs to match font size
+				position: absolute;
+				right: 20px;
+				top: 42px;
+				display: block;
+				cursor: pointer;
 			}
-			.header .primary ul li:after {
-			    content: '\003e';
-			    display: block;
-			    position: absolute;
-			    right: 20px;
-			    top: 0px;
-			    font-family: 'WebSymbolsRegular';
-			    font-size: 14px;
-			    color: #999;
-			    text-align: center;
-			    vertical-align: middle;
-			    line-height: 38px;
-			}
-			.header .primary ul li a,
-			.header .primary ul li.current a,
-			.header .primary ul li.section a {
-			    padding: 10px 0 10px 22px;
-			    font-weight: bold;
-			    border-bottom: 1px solid #bbb;
-			    color: #434343;
-			    border-radius: 0 !important;
-			    background: #e7e7e7 !important;
-			}
-			.header .primary ul li a:hover {
-			    color: inherit
-			}
-			.header .primary li.section:after,
-			.header .primary li.current:after {
-			    display: none;
-			}
-			.tablet-nav .header nav.primary ul li {
+			ul {
+				z-index: 10;
+				position: relative;
+				display: none;
+				float: left;
+				margin: 0 !important;
 				padding: 0;
+				white-space: normal;
+				width: 100%;
+				li {
+					width: 100%;
+					margin: 0 !important;
+					float: none;
+					background: none;
+					position: relative;
+					text-shadow: 0 1px $white;
+					&:after {
+						content: '\003e';
+						display: block;
+						position: absolute;
+						right: 20px;
+						top: 0px;
+						font-family: $iconFont;
+						font-size: rem(1.1);
+						line-height: rem(2.9); //needs to have a specific lineheight that is not based on $baseLineHeight
+						color: lighten($gray, 5%);
+						text-align: center;
+						vertical-align: middle;
+					}
+					a {
+						padding: 10px 0 10px 22px;
+						font-weight: bold;
+						border-bottom: 1px solid lighten($gray, 10%);
+						color: $grayDark;
+						border-radius: 0 !important;
+						background: $grayLighter;
+					}
+					&.current,
+					&.section {
+						a {
+							color: $grayDarker;
+							background-color: $grayLight;
+						}
+						&:after {
+							display: none;
+						}
+					}
+					a:hover {
+						color: $black;
+					}
+				}
 			}
+		}
+	}
+
+	.tablet-nav .header nav.primary ul li {
+		padding: 0;
+	}
 
 	/* Search Form */
 	.search-bar {
-	    width: 100%;
-	    position: relative;
-	    top: 0;
-	    right: 0;
-	    display: none;
-	    padding: 20px 0;
-	    margin: 80px 0 0;
-	    background-color: #E7E7E7;
+		width: 100%;
+		position: relative;
+		top: 0;
+		right: 0;
+		display: none;
+		padding: $grid-y*4 0;
+		margin: $grid-y*16 0 0;
+		background-color: $grayLighter;
+		form {
+			margin: 0;
+			width: 100%;
+			fieldset {
+				padding: 0 18px;
+				left: 0;
+				right: 0;
+				position: relative;
+			}
+			input {
+				&.text {
+					width: 93%;
+					padding: 8px 7% 8px 0;
+					text-indent: $grid-x*3;
+					position: relative;
+					display: block;
+					right: 0;
+					left: 0;
+					border: 1px solid $grayLighter;
+					background: $white;
+					font-size: rem(1.3);
+				}
+				&.action {
+					right: 24px;
+					top: 2px;
+					font-size: rem(1.4);
+				}
+			}
+		}
+		div.field {
+			margin-bottom: 0;
+		}
 	}
 	.search-dropdown-icon {
-	    display: block;
-	    cursor: pointer;
-	    width: 20px;
-	    height: 20px;
-	    position: absolute;
-	    right: 60px;
-	    top: 34px;
-	    font-family: 'WebSymbolsRegular';
-	    font-size: 20px;
-	    color: #ededed;
-	    text-align: center;
-	    line-height: 20px;
-	}
-	.search-bar form {
-	    margin: 0;
-	    width: 100%;
-	}
-		.search-bar form fieldset {
-		    padding: 0 18px;
-		    left: 0;
-		    right: 0;
-		    position: relative;
-		}
-	.search-bar div.field {
-	    margin-bottom: 0
-	}
-	.search-bar form input.text {
-	    width: 93%;
-	    padding: 8px 7% 8px 0;
-	    text-indent: 15px;
-	    position: relative;
-	    display: block;
-	    right: 0;
-	    left: 0;
-	    border: 1px solid #e5e5e5;
-	    background: #fff;
-	    font-size: 17px;
-	}
-	.search-bar form input.action {
-	    right: 24px;
-	    top: 2px;
-	    font-size: 18px;
+		display: block;
+		cursor: pointer;
+		width: rem(1.55); //needs to match the fontsize
+		height: rem(1.55); //needs to match the fontsize
+		position: absolute;
+		right: 60px;
+		top: 44px;
+		font-family: $iconFont;
+		font-size: rem(1.55);
+		color: $offWhite;
+		text-align: center;
+		line-height: rem(1.55); //needs to be the same as the font size
 	}
 
 	/* Main Content */
 	.main {
-	    padding: 20px 0 45px;
+	    padding: $grid-y*4 0 $grid-y*9;
 	}
 	.content-container,
 	aside {
 	    width: 100%
 	}
-		.typography h1 {
-		    font-size: 30px;
-			 line-height:35px;
-		    margin-bottom: 15px;
-		    padding-bottom: 10px;
+		
+	.typography {
+		h1 {
+			font-size: rem(2.3);
+			line-height:rem-line-height(2.3);
+			margin-bottom: $grid-y*3;
+			padding-bottom: $grid-y*2;
 		}
-		.typography p {
-		    font-size: 14px;
-		    line-height: 23px;
+		p {
+			font-size: rem(1.1);
+			line-height: rem-line-height(1.1);
+			&.intro {
+				font-size: rem(1.45);
+				line-height: rem-line-height(1.45);
+			}
 		}
-	p.intro {
-	    font-size: 19px;
-	    line-height: 27px;
 	}
+
 	.main .inner {
-	    padding: 0 22px
+		padding: 0 $grid-x*5;
 	}
 	/* Secondry Nav */
-	.secondary li a {
-	    line-height: 24px
-	}
-	.secondary li .arrow {
-	    line-height: 26px
+	.secondary li {
+		a {
+			line-height: 24px
+		}
+		.arrow {
+			line-height: 26px
+		}
 	}
 	/* Footer */
 	.footer .right {
@@ -665,71 +707,71 @@ body h1 span.amp {
 /* Based on HTML5 boilerplate print styles */
 @media print { 
 	* {
-	    background: transparent !important;
-	    color: black !important;
-	    box-shadow: none !important;
-	    text-shadow: none !important;
-	    filter: none !important;
-	    -ms-filter: none !important;
+		background: transparent !important;
+		color: black !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+		filter: none !important;
+		-ms-filter: none !important;
 	}
 	a,
 	a:visited {
-	    text-decoration: underline
+		text-decoration: underline
 	}
 	a[href]:after {
-        content: " (" attr(href) ")";
-    }
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+		content: " (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+	/*
+	* Don't show links for images, or javascript/internal links
+	*/
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
 
 	thead {
-	    display: table-header-group
+		display: table-header-group
 	}
 	tr,
 	img {
-	    page-break-inside: avoid
+		page-break-inside: avoid
 	}
 	img {
-	    max-width: 100% !important
+		max-width: 100% !important
 	}
 	pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-    @page {
-        margin: 0.5cm;
-    }
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	@page {
+		margin: 0.5cm;
+	}
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 
-    /* Simple theme custom print styles */
+	/* Simple theme custom print styles */
 	.header,
 	.footer,
-    .nav-open-button,
-    .search-bar,
-    .search-dropdown-icon,
-    nav.primary {
-	    display: none;
+	.nav-open-button,
+	.search-bar,
+	.search-dropdown-icon,
+	nav.primary {
+		display: none;
 	}
 }

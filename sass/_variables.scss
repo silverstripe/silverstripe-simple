@@ -4,6 +4,7 @@
 
 $white:                   #ffffff;
 $offWhite:                #f7f7f7;
+$black:                   #000000;
 
 $grayLighter:             #e5e5e5;
 $grayLight:               #d4d4d4;
@@ -24,13 +25,18 @@ $baseFontColor:           $grayDarker;
 $linkColor:               #b80000;
 $linkColorHover:          #d80000;
 
+$headerColor:             #161616;
+
 /* FONTS */
 
 $baseFontSize:            13px;
-$baseFontFamily:          Arial, Helvetica, sans-serif;
-$serifFontFamily:         "CamboRegular", Georgia, "Times New Roman", Times, serif;
-
 $baseLineHeight:          1.3em;
+
+$baseFontFamily:          Arial, Helvetica, sans-serif;
+$sansFontFamily:          "HelveticaNeueLTPro-Bd", "Helvetica Neue LT Pro Bold", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue LT Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:         "CamboRegular", Georgia, "Times New Roman", Times, serif;
+$altSerifFontFamily:      Baskerville,"Goudy Old Style","Palatino","Book Antiqua",Georgia;
+$iconFont:                'WebSymbolsRegular';
 
 /* GRID */
 

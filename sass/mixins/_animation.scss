@@ -1,3 +1,9 @@
+@mixin transition($type, $time) {
+	-moz-transition: $type $time;
+	-webkit-transition: $type $time;
+	transition:$type $time;
+}
+
 
 @mixin delay($time, $webkit:true){
 	@if($webkit){
