@@ -7,6 +7,8 @@
 	@return $value / ($value * 0 + 1); // $grid-y (set in _variables.scss)
 }
 
+/* For PIXEL based layouts */
+
 @function rem($emval, $base: $baseFontSize) {
 	// Function to take a rem unit value (doesn't require use of units eg: 1rem would just be 1) and divide it by a base value in order to
 	// return the size in pxs. Default base value is $baseFontSize (set in _variables.scss)
