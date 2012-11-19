@@ -1,7 +1,7 @@
 /** ----------------------------------------------------------
  *
  * This stylesheet includes both generic form styles and 
- *    additional form styles for the User Defined Form Module. 
+ *    additional form styles for the User Defined Form Module.
  *
  ** ------------------------------------------------------- */
 
@@ -44,7 +44,7 @@ form select {
     background-color: #fff;
     border: 1px solid #dad9d9;
 }
-    .ie7 form select { width: 400px; }
+    .ie7 form select { width: 400px; } /* fix for ie7's rendering of max-width property on select input */
 
 form input.text:focus,
 form textarea:focus,
@@ -57,7 +57,7 @@ form input[disabled], form textarea[disabled] {
     border: 1px solid #dad9d9;
 }
 textarea {
-    resize: vertical;
+    resize: vertical; /* forces text area to be resized vertically only */
 }
 
 
@@ -194,7 +194,7 @@ form .date .middleColumn input {
     font-size: 13px;                            /* reset to default */
     color: #333;                                /* reset to default */
 }
-form .requiredField label.left:after {
+form .requiredField label.left:after { /* pseudo element adds an asterisk to a required fields label */
     color: #B94A48;
     content: "*";
     font-size: 14px;
@@ -212,7 +212,7 @@ form .optionset ul {
         margin-bottom: 5px;
         list-style-type:none;
     }
-    form div.checkbox:after { 
+    form div.checkbox:after { /* clearfix */
         content: ".";
         display: block;
         height: 0;
