@@ -1,8 +1,8 @@
-<aside>
+<aside class="sidebar unit size1of4">
 	<% if $Menu(2) %>
 		<nav class="secondary">
 			<h3>
-				<% loop $Level(1) %>
+				<% loop $Parent %>
 					$Title
 				<% end_loop %>
 			</h3>

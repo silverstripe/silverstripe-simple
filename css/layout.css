@@ -6,30 +6,98 @@
  *		Include your notes or table of contents below....
  *		Include color hex's or values of your grid
  *
- *		1. MAIN LAYOUT
- *		2. HEADER
+ *		1. OOCSS GRID
+ *		2. MAIN LAYOUT
+ *		3. HEADER
  *			- Brand
  *			- Search Form
- *		3. Navigation
+ *		4. Navigation
  *			- Primary Navigation
  *			- tablet Navigation
  *			- Secondary Navigation
  *			- Secondary Nav 2-5 Levels deep
- *		4. Mixed
- *		5. Footer
- *		6. Page Specific Layout
+ *		5. Mixed
+ *		6. Footer
+ *		7. Page Specific Layout
  *			- Homepage
  *			- Search Results
- *		7. Device and Responsive Layout
+ *		8. Device and Responsive Layout
  *			- Breakpoint 960px
  *			- Breakpoint 640px
  *				- Search Form
  *				- Main Content
- *		8. Print Styles
+ *		9. Print Styles
  *			- Simple Theme custom print styles
  *
  * @author Your Name <email@silverstripe.com>
  * ------------------------------------------------------- */
+
+/* OOCSS Grid
+* https://github.com/stubbornella/oocss/wiki/grids
+*/
+
+.line, /* line - Groups units on one horizontal line. Note: for mobile layout units may be stacked to avoid horizontal scrolling. */
+.lastUnit {
+	overflow:hidden;
+	*overflow:visible;
+	*zoom:1;
+	padding:0 10px;
+}
+.unit { /* unit - Base class which divides a line into sections (columns). */
+	float:left;
+	padding:0 10px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box; /* box-sizing:border-box; creates a box-model where 
+	padding and border are NOT added onto the width - they are included in the width, 
+	so a 200px wide element with 20px padding will be 200px, NOT 240px wide */
+}
+.unitRightv { /* Use this class if you want to offset a column eg: |--content(.unit)--|--content(.unit)--|--no-content--|--no-content--|--content(.unitRighttv)--| */
+	float:right;
+}
+
+/* sizeXofY - Extends unit. Indicates the fractional width of the unit, for example size3of4 would take up three quarters, or 75%, of the horizontal space. 
+The following fractions are supported: 1, 1/2, 1/3, 2/3, 1/4, 3/4, 1/5, 2/5, 3/5, 4/5 */
+/* It is possible to add more columns if you wish you will just have to add the fractions that are missing eg: .size1of6 {width:16.66666%;} */
+
+.size1of1 {
+	float:none;
+}
+.size1of2 {
+	width:50%;
+}
+.size1of3 {
+	width:33.33333%;
+}
+.size2of3 {
+	width:66.66666%;
+}
+.size1of4 {
+	width:25%;
+}
+.size3of4 {
+	width:75%;
+}
+.size1of5 {
+	width:20%;
+}
+.size2of5 {
+	width:40%;
+}
+.size3of5 {
+	width:60%;
+}
+.size4of5 {
+	width:80%;
+}
+.lastUnit { /* lastUnit - Extends unit. Applied to the last child of every line. */
+	float:none;
+	width:auto;
+	_position:relative; /* Bug fix for IE6 - Internet Explorer 6 and below wouldn't fail on properties that were prefixed with non-alphanumeric characters. 
+	meaning that anything prefixed with _ wouldn't be picked up by any other browsers */
+	_left:-3px;
+	_margin-right:-3px;
+}
 
 /* MAIN LAYOUT */
 body {
@@ -55,20 +123,14 @@ body {
 	.ie6 .inner {
 	    width: 960px;
 	}
-	.content-container { /* widths are set as percentages due to responsive nature of the site */
-	    float: right;
-	    width: 73%; /* sets width of content-container when there is a sidebar */
-	}
 	.no-sidebar .content-container {
 	    float: left;
 	    width:100%; /* makes content container full width when there is no sidebar */
 	}
-	aside { /* this is the sidebar element */
-	    float: left;
-	    width: 23%;
+	.sidebar { /* this is the sidebar element */
 	    margin-top: 12px;
 	}
-	.no-sidebar aside {
+	.no-sidebar .sidebar {
 		display: none;
 	}
 
@@ -283,6 +345,7 @@ body {
 		}
 		.main .secondary li.current a.current {
 			color: #b80000;
+			background-color: #e1e1e1;
 		}
 		.main .secondary li.section,
 		.main .secondary li.current {
@@ -670,8 +733,9 @@ body h1 span.amp {
 	    padding: 20px 0 45px; /* decrease padding so that more content can fit on screen */
 	}
 	.content-container,
-	aside {
+	.sidebar {
 	    width: 100%; /* sidenav is now shown above the page content */
+	    margin-bottom: 30px;
 	}
 		.typography h1 { /* decrease size of page heading due to smaller screen */
 		    font-size: 30px;
