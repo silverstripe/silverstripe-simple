@@ -1,16 +1,14 @@
 <aside>
 	<% if $Menu(2) %>
 		<nav class="secondary">
+				<% with $Level(1) %>
 			<h3>
-				<% loop $Level(1) %>
 					$Title
-				<% end_loop %>
 			</h3>
 			<ul>
-				<% loop $Menu(1) %>
 					<% include SidebarMenu %>
-				<% end_loop %>
 			</ul>
+				<% end_with %>
 		</nav>
 	<% end_if %>
 </aside>
