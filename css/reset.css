@@ -59,4 +59,4 @@ a:hover, a:active {outline: none;}
 ol {list-style-type:decimal;}
 ul li {list-style-type:none;}
 nav ul, nav li {margin:0; list-style:none; list-style-image:none;}
-strong, th {font-weight:bold;}
+strong, b, th {font-weight:bold;}
