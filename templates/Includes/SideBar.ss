@@ -7,9 +7,7 @@
 				<% end_loop %>
 			</h3>
 			<ul>
-				<% loop $Menu(1) %>
-					<% include SidebarMenu %>
-				<% end_loop %>
+				<% include SidebarMenu %>
 			</ul>
 		</nav>
 	<% end_if %>
