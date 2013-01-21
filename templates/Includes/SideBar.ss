@@ -1,4 +1,4 @@
-<aside>
+<aside class="sidebar unit size1of4">
 	<% if $Menu(2) %>
 		<nav class="secondary">
 			<h3>
