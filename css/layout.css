@@ -294,7 +294,7 @@ body {
 	/* Secondary navigation */
 	.main .secondary h3 {
 	    font-size: 20px;
-	    color: #b8b7b7;
+	    color: #AAA;
 	    margin: 0 0 8px 0;
 	    font-family: "CamboRegular", Georgia, "Times New Roman", Times, serif;
 	    font-weight: normal;
@@ -345,19 +345,17 @@ body {
 		}
 		.main .secondary li.current a.current {
 			color: #b80000;
-			background-color: #e1e1e1;
+			background-color: #EDEDED;
 		}
 		.main .secondary li.section,
 		.main .secondary li.current {
-		    background-color: #f1f1f1;
+		    background-color: #F3F3F3;
 		}
 			.main .secondary li.section a,
 			.main .secondary li.current a {
 			    color: #000;
 			}
-		.main .secondary h3 {
-			color: #aaa;
-		}
+		
 
 		/* Secondary navigation 2-5 levels deep */
 		.main .secondary ul ul {
