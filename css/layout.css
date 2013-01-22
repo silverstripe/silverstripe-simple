@@ -219,11 +219,13 @@ body {
 /* NAVIGATION */
 
 	/* Primary navigation */
-
+	.header .inner .unit {
+		position: relative; /* used to position the main navigation */
+	}
 	.header .primary ul {
 		position:absolute;
 		bottom:0;
-		right:17px; /* positions the main navigation */
+		right:0; /* positions the main navigation */
 	}
 	.header .primary li {
 	    float: left;
