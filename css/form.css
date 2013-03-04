@@ -181,11 +181,13 @@ form .date .middleColumn input {
     /*background: transparent url(../images/icons/your_icon_here.png) no-repeat scroll 90px 5px;*/
     width: 114px;
 }
-.Actions input.resetformaction {                  /* Clear button */
+.Actions input.resetformaction,
+.Actions input.action-minor {                  /* Clear button */
     float: left;
     background-color: #888;
 }
-.Actions input.resetformaction:hover {            /* Clear button */
+.Actions input.resetformaction:hover,
+.Actions input.action-minor:hover {            /* Clear button */
     background-color: #aaa;
 }
 
