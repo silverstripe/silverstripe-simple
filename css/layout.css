@@ -169,11 +169,11 @@ body {
 	/* Search form */
 
 	.search-bar {
-	    position: absolute;
-	    right: 28px;
-	    top: 32px;
+		position: absolute;
+		right: 13px;
+		top: 12px;
 	}
-		.search-bar #Search {
+		.search-bar .field {
 			margin: 0;
 			padding: 0;
 		}
