@@ -14,7 +14,7 @@ jQuery.noConflict();
 			}
 		});
 		searchField.blur(function() {
-			if (searchField.val() == '') {
+			if (searchField.val() === '') {
 				searchField.val(default_value);
 			}
 		});
