@@ -1,8 +1,7 @@
 jQuery.noConflict();
 
-(function($) {    
-    $(document).ready(function() {
-										 
+(function($) {
+	$(document).ready(function() {
 		/* removes text from search form on focus and replaces it on unfocus - if text is entered then it does not get replaced with default on unfocus */
 		$('#SearchForm_SearchForm_action_results').val('L');
 		var searchField = $('#SearchForm_SearchForm_Search');
@@ -18,29 +17,28 @@ jQuery.noConflict();
 					searchField.val(default_value);
 			  }
 		});
-				
+
 		if (!$.browser.msie || ($.browser.msie && (parseInt($.browser.version, 10) > 8))) {
-			
 			var searchBarButton = $("span.search-dropdown-icon");
 			var searchBar = $('div.search-bar');
 			var menuButton = $("span.nav-open-button");
-			var menu = $('.header .primary ul');										 
+			var menu = $('.header .primary ul');
 			var mobile = false;
 			var changed = false;
-			
+
 			$('body').append('<div id="media-query-trigger"></div>');
-			
-			function menuWidthCheck() {								  
+
+			function menuWidthCheck() {
 				var header_w = $('header .inner').width();
 				var elements_w = menu.width() + $('.brand').width();
-				
+
 				if ((header_w < elements_w) || ($(window).width() <= 768)) {
 					$('body').addClass('tablet-nav');
 				}
 				else {
-					$('body').removeClass('tablet-nav');				
+					$('body').removeClass('tablet-nav');
 				}
-				
+
 				mobile_old = mobile;
 				if ($('#media-query-trigger').css('visibility') == 'hidden') {
 					mobile = false;
@@ -48,7 +46,7 @@ jQuery.noConflict();
 				else {
 					mobile = true;
 				}
-				
+
 				if (mobile_old != mobile) {
 					changed = true;
 				}
@@ -56,12 +54,12 @@ jQuery.noConflict();
 					changed = false;
 				}
 			}
-			
+
 			menuWidthCheck();
-			
+
 			$(window).resize(function() {
 				menuWidthCheck();
-				
+
 				if (!mobile) {
 					menu.show();
 					searchBar.show();
@@ -69,23 +67,21 @@ jQuery.noConflict();
 				else {
 					if (changed) {
 						menu.hide();
-						searchBar.hide();	
+						searchBar.hide();
 					}
 				}
 			});
-			
-			/* toggle navigation and search in mobile view */		
+
+			/* toggle navigation and search in mobile view */
 			searchBarButton.click(function() {
-				menu.slideUp();													 
+				menu.slideUp();
 				searchBar.slideToggle(200);
 			});
-			
-			menuButton.click(function() {
-				searchBar.slideUp();													 
-				menu.slideToggle(200);
-			});	
 
+			menuButton.click(function() {
+				searchBar.slideUp();
+				menu.slideToggle(200);
+			});
 		}
-		
-    });
+	});
 }(jQuery));
