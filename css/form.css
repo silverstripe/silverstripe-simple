@@ -87,7 +87,9 @@ form .message {
         background-color: #ecf9d0;
         border-color: #8fbe00;
     }
-    form .bad, form .required {
+    form .bad,
+    form .required,
+    form .error {
         background-color: #f9d0d0;
         border-color: #cf0000;
         color: #b80000;
