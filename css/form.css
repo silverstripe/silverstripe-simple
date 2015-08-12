@@ -269,6 +269,13 @@ form #DMYDate-day {
     width: 25px
 }
 
+/* Userform progress bar */
+.userform-progress .step-button-jump {
+    background: none;
+    color: #C80000;
+    font-size: 1.2em;
+}
+
 
 
 
