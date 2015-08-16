@@ -100,7 +100,7 @@ form .message {
 .Actions {
     margin-bottom: 20px;
 }
-    a.btn, button, input[type="submit"], .Actions .action {
+    a.btn, button, input[type="submit"], input[type="reset"], .Actions .action {
         background: #b80000;
         color: #fff;
         display: inline-block;
