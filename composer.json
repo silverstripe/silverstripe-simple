@@ -13,5 +13,10 @@
     "require": {
         "composer/installers": "*",
         "silverstripe/framework": ">=3.0"
-    }
+    },
+	"extra": {
+		"branch-alias": {
+			"dev-master": "3.2.x-dev"
+		}
+	}
 }
