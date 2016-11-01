@@ -38,7 +38,7 @@ Change it, enhance it and most importantly enjoy it!
 <% include Footer %>
 
 <% require javascript('//code.jquery.com/jquery-1.7.2.min.js') %>
-<% require themedJavascript('script.js') %>
+<% require themedJavascript('script') %>
 
 </body>
 </html>
