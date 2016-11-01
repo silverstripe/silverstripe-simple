@@ -12,7 +12,7 @@
     ],
     "require": {
         "composer/installers": "*",
-        "silverstripe/framework": ">=3.0"
+        "silverstripe/framework": ">=3.5"
     },
 	"extra": {
 		"branch-alias": {
