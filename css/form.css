@@ -1,6 +1,6 @@
 /** ----------------------------------------------------------
  *
- * This stylesheet includes both generic form styles and 
+ * This stylesheet includes both generic form styles and
  *    additional form styles for the User Defined Form Module.
  *
  ** ------------------------------------------------------- */
@@ -62,12 +62,13 @@ textarea {
 
 
 /* Radio and Checkbox */
-.field .checkbox, .field .radio {
-    float: left; 
-    width: 13px; 
-    height: 13px; 
-    margin-right: 6px; 
-    margin-top: 3px;
+.field .checkbox:not(.field),
+.field .radio:not(.field) {
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin-right: 6px;
+    margin-top: 5px;
     padding: 0;
 }
     .checkbox label.right,
@@ -236,7 +237,7 @@ div.holder-required {               /* This class needs to be changed - is used 
     margin-left: -11px; */
 }
 form input.holder-required {        /* This class needs to be changed - is used for both input and div */
-    border: 1px solid #cf0000; 
+    border: 1px solid #cf0000;
 }
 
 /* Error messages */
@@ -273,7 +274,7 @@ form #DMYDate-day {
 /* Responsive form styles
 ----------------------------------------------- */
 
-@media only screen and (max-width: 700px) { 
+@media only screen and (max-width: 700px) {
 
     /* To test - potentially not needed? */
 	.header form .middleColumn {
@@ -286,12 +287,12 @@ form #DMYDate-day {
 	}
 }
 
-@media only screen and (max-width: 900px) { 
+@media only screen and (max-width: 900px) {
     form {
         max-width: 100%;
     }
 }
 
-@media only screen and (min-width: 700px) { 
+@media only screen and (min-width: 700px) {
 
 }
