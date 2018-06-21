@@ -183,7 +183,6 @@ body {
 		    color: #888;
 		    margin: 0;
 		    border: none;
-		    -moz-border-radius: 14px;
 		    border-radius: 14px;
 		    background: #fff;
 		}
@@ -719,8 +718,7 @@ body h1 span.amp {
 	    border: 1px solid #e5e5e5;
 	    background: #fff;
 	    font-size: 17px;
-	    -moz-border-radius: 20px; /* increase border radius due to increased padding */
-		border-radius: 20px;
+	    border-radius: 20px; /* increase border radius due to increased padding */
 	}
 	.search-bar form input.action {
 	    right: 5%;
