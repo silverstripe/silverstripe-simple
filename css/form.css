@@ -246,8 +246,6 @@ form input.holder-required {        /* This class needs to be changed - is used 
 input:invalid,
 textarea:invalid {
     border-radius: 1px;
-    -moz-box-shadow: 0px 0px 5px red;
-    -webkit-box-shadow: 0px 0px 5px red;
     box-shadow: 0px 0px 5px red;
 }
 .no-boxshadow input:invalid,
