@@ -93,12 +93,12 @@ body {
 }
 
 /* LINKS */
-.typography a, 
+.typography a,
 .typography a.intro {
     color: #B80000;
     text-decoration: none;
 }
-  .typography a:hover { 
+  .typography a:hover {
     color: #D80000;
     border-bottom: 1px dashed #B80000;
   }
@@ -107,7 +107,7 @@ body {
 
 /* LIST STYLES
 -------------------------------------------- */
-.typography ul, 
+.typography ul,
 .typography ol,
 .typography dl { margin: 0 0 20px 25px; }
 .typography ul li { list-style-type: disc; } /* adds disc style bullet to the list */
@@ -142,20 +142,20 @@ body {
   }
 
 
-/* WYSIWYG EDITOR ALIGNMENT CLASSES 
+/* WYSIWYG EDITOR ALIGNMENT CLASSES
 -------------------------------------------- */
-.typography .left {
+.typography .text-left {
     text-align: left
 }
-.typography .center {
+.typography .text-center {
     text-align: center
 }
-.typography .right {
+.typography .text-right {
     text-align: right
 }
 
 
-/* IMAGES 
+/* IMAGES
 -------------------------------------------- */
 .typography img {
     border: 5px solid #d7d7d7;
