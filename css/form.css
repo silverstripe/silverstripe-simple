@@ -198,7 +198,7 @@ form .date .middleColumn input {
     font-size: 13px;                            /* reset to default */
     color: #333;                                /* reset to default */
 }
-form .requiredField label.left:after { /* pseudo element adds an asterisk to a required fields label */
+form .requiredField label.left:after, form .requiredField legend.left:after { /* pseudo element adds an asterisk to a required fields label */
     color: #B94A48;
     content: "*";
     font-size: 14px;
