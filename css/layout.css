@@ -424,14 +424,14 @@ body h1 span.amp {
 
 /* FOOTER */
 .footer {
-    color: #999;
+    color: #6B6B6B;
     background: #ededed;
     padding: 20px 0;
     font-size: 11px;
     line-height: 22px;
 }
 	.footer a {
-	    color: #999;
+	    color: #6B6B6B;
 	}
 	.footer a:hover {
 	    color: #B90000;
@@ -521,7 +521,7 @@ body h1 span.amp {
 		    display:table; /* displays the pagination as a table so that elements stay inline and the middle column adjusts its size to accomodate and the right arrow stays to the right */
 		    width:100%;
 		}
-		.searchResults #PageNumbers .pagination span{
+		.searchResults #PageNumbers .pagination button{
 			display:table-cell; /* each element in the pagination div displays as a table cell */
 		}
 		.searchResults #PageNumbers p {
@@ -593,7 +593,7 @@ body h1 span.amp {
 		    padding-right: 100px; /* padding stops .brand text from overlapping the search and nav buttons */
 		}
 	.tablet-nav .header {
-	    padding: 0px;
+	    padding: 0;
 	}
 		.tablet-nav .header .inner {
 		    padding: 20px 0 0 0;
@@ -611,6 +611,9 @@ body h1 span.amp {
 		    font-family: 'WebSymbolsRegular';
 		    font-size: 20px;
 		    color: #ededed;
+            background: #000;
+            margin-top: 0;
+            padding: 0;
 		}
 		.tablet-nav .header .primary ul {
 		    z-index: 10;
@@ -637,7 +640,7 @@ body h1 span.amp {
 			    position: absolute;
 			    right: 20px;
 			    top: 0px;
-			    font-family: 'WebSymbolsRegular';
+                font-family: 'WebSymbolsRegular';
 			    font-size: 14px;
 			    color: #999;
 			    text-align: center;

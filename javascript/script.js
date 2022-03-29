@@ -19,9 +19,9 @@ jQuery.noConflict();
 		});
 
 		if (!$.browser.msie || ($.browser.msie && (parseInt($.browser.version, 10) > 8))) {
-			var searchBarButton = $("span.search-dropdown-icon");
+			var searchBarButton = $("button.search-dropdown-icon");
 			var searchBar = $('div.search-bar');
-			var menuButton = $("span.nav-open-button");
+			var menuButton = $("button.nav-open-button");
 			var menu = $('.header .primary ul');
 			var mobile = false;
 			var changed = false;

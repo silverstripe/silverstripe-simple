@@ -8,7 +8,7 @@
 				<% end_if %>
 			</a>
 			<% if $SearchForm %>
-				<span class="search-dropdown-icon">L</span>
+				<button class="search-dropdown-icon">L</button>
 				<div class="search-bar">
 					$SearchForm
 				</div>
