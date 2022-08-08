@@ -2,11 +2,14 @@
     "name": "silverstripe-themes/simple",
     "description": "The SilverStripe simple theme (default SilverStripe 3 theme)",
     "type": "silverstripe-theme",
-    "keywords": ["silverstripe", "theme"],
+    "keywords": [
+        "silverstripe",
+        "theme"
+    ],
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Sara Tušar (Innovaif)",
+            "name": "Sara Tu\u0161ar (Innovaif)",
             "homepage": "http://www.saratusar.com"
         }
     ],
@@ -14,15 +17,12 @@
         "composer/installers": "*",
         "silverstripe/framework": ">=3.5"
     },
-	"extra": {
-		"branch-alias": {
-			"dev-master": "3.3.x-dev"
-		},
+    "extra": {
         "expose": [
             "css",
             "images",
             "javascript",
             "webfonts"
         ]
-	}
+    }
 }
