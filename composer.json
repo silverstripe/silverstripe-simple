@@ -15,7 +15,7 @@
     ],
     "require": {
         "composer/installers": "*",
-        "silverstripe/framework": ">=3.5"
+        "silverstripe/framework": "^5"
     },
     "extra": {
         "expose": [
