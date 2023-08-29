@@ -1,0 +1,17 @@
+name: Keepalive
+
+on:
+  # At 10:50 PM UTC, on day 27 of the month
+  schedule:
+    - cron: '50 22 27 * *'
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    name: Keepalive
+    # Only run cron on the silverstripe-themes account
+    if: (github.event_name == 'schedule' && github.repository_owner == 'silverstripe-themes') || (github.event_name != 'schedule')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keepalive
+        uses: silverstripe/gha-keepalive@v1
