@@ -144,13 +144,13 @@ body {
 
 /* WYSIWYG EDITOR ALIGNMENT CLASSES
 -------------------------------------------- */
-.typography .text-left {
+.typography .text-left, .typography .left {
     text-align: left
 }
-.typography .text-center {
+.typography .text-center, .typography .center {
     text-align: center
 }
-.typography .text-right {
+.typography .text-right, .typography .right {
     text-align: right
 }
 
@@ -175,6 +175,12 @@ body {
 .typography img.leftAlone {
     float: left;
     margin-right: 100%;
+    margin-bottom: 10px;
+    clear: both;
+}
+.typography img.rightAlone {
+    float: right;
+    margin-left: 100%;
     margin-bottom: 10px;
     clear: both;
 }
@@ -212,14 +218,16 @@ body {
   .typography .captionImage.right img {
     margin-left: -10px;
   }
-  .typography .captionImage.right p {
-    margin-left: -10px;
-    text-align: left;
-    margin-left: -10px;
-  }
-.typography .captionImage.leftAlone{
-  float:none;
-  margin: 0 20px 20px 0px;
+
+.typography .captionImage.leftAlone {
+    float: left;
+    clear: both;
+    margin-right: 100%;
+}
+.typography .captionImage.rightAlone {
+    float: right;
+    clear: both;
+    margin-left: 100%;
 }
 .typography .captionImage.center{
   margin: 0 auto 20px;
@@ -229,6 +237,12 @@ body {
   margin: 5px 0;
   font-style: italic;
   color: #888;
+}
+.typography .captionImage p.caption.text-center {
+    text-align: center;
+}
+.typography .captionImage p.caption.text-left {
+    text-align: left;
 }
 
 
